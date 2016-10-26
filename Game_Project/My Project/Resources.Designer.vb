@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to #2A2929.
+        '''</summary>
+        Friend ReadOnly Property BackColor() As String
+            Get
+                Return ResourceManager.GetString("BackColor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property dd_menu() As System.Drawing.Bitmap
@@ -77,6 +86,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("dd_rommal", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to #D5D6D6.
+        '''</summary>
+        Friend ReadOnly Property ForeColor() As String
+            Get
+                Return ResourceManager.GetString("ForeColor", resourceCulture)
             End Get
         End Property
     End Module

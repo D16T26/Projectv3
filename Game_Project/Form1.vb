@@ -12,7 +12,6 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Panel1.BackColor = Color.Black
         Me.SetSize()
-        Me.Panel1.Controls.Add(New MainMenuFrame)
     End Sub
 
     ''' <summary>

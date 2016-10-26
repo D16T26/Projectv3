@@ -5,10 +5,12 @@
     Friend Property WestNav As NavButton
     Friend Property SouthNav As NavButton
     Friend Property EastNav As NavButton
+    Private ReadOnly Property bColor = ColorTranslator.FromHtml(My.Resources.BackColor)
+    Private ReadOnly Property fColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
 
     Public Sub New()
-        Me.BackColor = Color.Black
-        Me.ForeColor = Color.White
+        Me.BackColor = Me.bColor
+        Me.ForeColor = Me.fColor
         Me.Font = New Font(FontFamily.GenericMonospace, 10)
         Me.Size = New Size(140, 30)
         Me.FlatStyle = FlatStyle.Flat
@@ -52,12 +54,8 @@
     End Sub
 
     Private Sub InvertColors()
-        If Me.Selected Then
-            Me.BackColor = Color.White
-            Me.ForeColor = Color.Black
-        Else
-            Me.BackColor = Color.Black
-            Me.ForeColor = Color.White
-        End If
+        Dim TempColor = Me.ForeColor
+        Me.ForeColor = Me.BackColor
+        Me.BackColor = TempColor
     End Sub
 End Class

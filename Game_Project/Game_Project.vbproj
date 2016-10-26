@@ -82,10 +82,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frames\MainMenuFrame.Designer.vb">
-      <DependentUpon>MainMenuFrame.vb</DependentUpon>
+    <Compile Include="Frames\MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frames\MainMenuFrame.vb">
+    <Compile Include="Frames\MainMenu.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,8 +109,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frames\MainMenuFrame.resx">
-      <DependentUpon>MainMenuFrame.vb</DependentUpon>
+    <EmbeddedResource Include="Frames\MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
