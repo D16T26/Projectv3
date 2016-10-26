@@ -13,6 +13,8 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetSize()
         Me.Panel1.Controls.Add(New MainMenu(Me))
+        'This button is only here to accept keyboard input
+        Me.NavButton1.Size = New Size(0, 0)
     End Sub
 
     ''' <summary>
@@ -33,7 +35,14 @@
         End
     End Sub
 
+    Friend Sub GoToIntro()
+        With Me.Panel1.Controls
+            .Clear()
+            .Add(New IntroFrame(Me))
+        End With
+    End Sub
+
     Friend Sub StartGame()
-        Throw New NotImplementedException
+        MsgBox("Bob")
     End Sub
 End Class

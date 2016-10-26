@@ -6,8 +6,8 @@
     Friend Property WestNav As NavButton
     Friend Property SouthNav As NavButton
     Friend Property EastNav As NavButton
-    Private ReadOnly Property bColor = ColorTranslator.FromHtml(My.Resources.BackColor)
-    Private ReadOnly Property fColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
+    Private ReadOnly Property bColor As Color = ColorTranslator.FromHtml(My.Resources.BackColor)
+    Private ReadOnly Property fColor As Color = ColorTranslator.FromHtml(My.Resources.ForeColor)
 
     Public Sub New()
         Me.BackColor = Me.bColor
@@ -44,13 +44,13 @@
     Private Sub AtKeyDown(sender As Game_Project.NavButton, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
             Case Keys.W
-                NorthNav.Focus()
+                Me.NorthNav.Focus()
             Case Keys.A
-                WestNav.Focus()
+                Me.WestNav.Focus()
             Case Keys.S
-                SouthNav.Focus()
+                Me.SouthNav.Focus()
             Case Keys.D
-                EastNav.Focus()
+                Me.EastNav.Focus()
         End Select
     End Sub
 

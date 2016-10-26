@@ -34,6 +34,7 @@
                 .Text = "    START"
                 .NorthNav = Me.NavButton3
                 .SouthNav = Me.NavButton3
+                .Focus()
             End With
 
             With .NavButton2
@@ -58,7 +59,7 @@
     End Sub
 
     Private Sub NavButton1_Click(sender As Object, e As EventArgs) Handles NavButton1.Click
-        Owner.StartGame()
+        Owner.GoToIntro()
     End Sub
 
     Private Sub NavButton3_Click(sender As Object, e As EventArgs) Handles NavButton3.Click
