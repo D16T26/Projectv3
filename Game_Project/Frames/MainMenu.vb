@@ -5,9 +5,6 @@
     Public Sub New(Owner As Form1)
         InitializeComponent()
         Me.Owner = Owner
-    End Sub
-
-    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.SetSize()
         Me.SetUpNavigation()
         Me.PictureBox1.Image = My.Resources.dd_menu

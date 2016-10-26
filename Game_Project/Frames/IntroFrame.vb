@@ -1,36 +1,38 @@
 ﻿Public Class IntroFrame
     Public ReadOnly Property author As String = "Sondre Grøneng"
     Private ReadOnly Property Owner As Form1
-    Private ReadOnly Property bColor As Color = ColorTranslator.FromHtml(My.Resources.BackColor)
-    Private ReadOnly Property fColor As Color = ColorTranslator.FromHtml(My.Resources.ForeColor)
 
     Public Sub New(Owner As Form1)
         InitializeComponent()
         Me.Owner = Owner
+        Me.Width = ProjectConstants.ContentWidth
+        Me.Height = ProjectConstants.ContentHeight
+        Me.BackColor = ColorTranslator.FromHtml(My.Resources.BackColor)
+        Me.SetUpLabel1()
+        Me.SetUpNavButton1()
+    End Sub
+
+    Private Sub SetUpLabel1()
+        With Me.Label1
+            .ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
+            .Location = New Point(.Location.X + 20, .Location.Y)
+            .Font = New Font(FontFamily.GenericMonospace, 10)
+            .Text = Me.IntroText
+        End With
+    End Sub
+
+    Private Sub SetUpNavButton1()
+        With Me.NavButton1
+            .Location = New Point(0, ProjectConstants.ContentHeight - (.Height + 50))
+            .Font = New Font(FontFamily.GenericMonospace, 10)
+            .Width = ProjectConstants.ContentWidth
+            .TextAlign = ContentAlignment.TopLeft
+            .Text = " - Press ENTER/SPACE to continue"
+        End With
     End Sub
 
     Private Sub IntroFrame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        With Me
-            .Width = ProjectConstants.ContentWidth
-            .Height = ProjectConstants.ContentHeight
-            .BackColor = Me.bColor
-
-            With .Label1
-                .ForeColor = Me.fColor
-                .Location = New Point(.Location.X + 20, .Location.Y)
-                .Font = New Font(FontFamily.GenericMonospace, 10)
-                .Text = Me.IntroText
-            End With
-
-            With .NavButton1
-                .Location = New Point(0, ProjectConstants.ContentHeight - (.Height + 50))
-                .Font = New Font(FontFamily.GenericMonospace, 10)
-                .Width = ProjectConstants.ContentWidth
-                .TextAlign = ContentAlignment.TopLeft
-                .Text = " - Press ENTER/SPACE to continue"
-                .Focus()
-            End With
-        End With
+        Me.NavButton1.Focus()
     End Sub
 
     Private Function IntroText() As String
@@ -46,6 +48,6 @@
     End Function
 
     Private Sub NavButton1_Click(sender As Object, e As EventArgs) Handles NavButton1.Click
-        Owner.StartGame()
+        Me.Owner.StartGame()
     End Sub
 End Class

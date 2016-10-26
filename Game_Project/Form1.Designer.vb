@@ -23,43 +23,43 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.NavButton1 = New Game_Project.NavButton()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(640, 480)
         Me.Panel1.TabIndex = 0
         '
-        'NavButton1
+        'Button1
         '
-        Me.NavButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton1.FlatAppearance.BorderSize = 0
-        Me.NavButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton1.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton1.Location = New System.Drawing.Point(13, 439)
-        Me.NavButton1.Name = "NavButton1"
-        Me.NavButton1.Size = New System.Drawing.Size(140, 30)
-        Me.NavButton1.TabIndex = 1
-        Me.NavButton1.Text = "NavButton1"
-        Me.NavButton1.UseVisualStyleBackColor = False
+        Me.Button1.Location = New System.Drawing.Point(13, 446)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(640, 481)
-        Me.Controls.Add(Me.NavButton1)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
+        Me.Opacity = 0.99R
         Me.Text = "Dungeons, and a Dragon "
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents NavButton1 As NavButton
+    Friend WithEvents Button1 As Button
 End Class

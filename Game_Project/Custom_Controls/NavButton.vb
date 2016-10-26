@@ -6,12 +6,12 @@
     Friend Property WestNav As NavButton
     Friend Property SouthNav As NavButton
     Friend Property EastNav As NavButton
-    Private ReadOnly Property bColor As Color = ColorTranslator.FromHtml(My.Resources.BackColor)
-    Private ReadOnly Property fColor As Color = ColorTranslator.FromHtml(My.Resources.ForeColor)
+    'Private ReadOnly Property bColor As Color = ColorTranslator.FromHtml(My.Resources.BackColor)
+    'Private ReadOnly Property fColor As Color = ColorTranslator.FromHtml(My.Resources.ForeColor)
 
     Public Sub New()
-        Me.BackColor = Me.bColor
-        Me.ForeColor = Me.fColor
+        Me.BackColor = ColorTranslator.FromHtml(My.Resources.BackColor)
+        Me.ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
         Me.Font = New Font(FontFamily.GenericMonospace, 10)
         Me.Size = New Size(140, 30)
         Me.FlatStyle = FlatStyle.Flat

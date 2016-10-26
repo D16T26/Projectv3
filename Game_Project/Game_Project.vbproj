@@ -94,6 +94,12 @@
     <Compile Include="Frames\MainMenu.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Frames\Rooms\Room.Designer.vb">
+      <DependentUpon>Room.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\Room.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\Rooms\Room.resx">
+      <DependentUpon>Room.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

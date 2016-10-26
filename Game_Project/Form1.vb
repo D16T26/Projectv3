@@ -9,12 +9,15 @@
     'Same as for FormBordereWidth, it looked right i added 39 to 480
     'so I subtracted 8 and made this property
     Private ReadOnly Property FormTopBarWidth As Integer = 31
+    Friend ReadOnly Property projectConstants As ProjectConstants
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub New()
+        InitializeComponent()
+        Me.projectConstants = New ProjectConstants(Me)
         Me.SetSize()
-        Me.Panel1.Controls.Add(New MainMenu(Me))
+        Me.Panel1.Controls.Add(New Room(Me)) 'TODO, change back to INTRO
         'This button is only here to accept keyboard input
-        Me.NavButton1.Size = New Size(0, 0)
+        Me.Button1.Size = New Size(0, 0)
     End Sub
 
     ''' <summary>
