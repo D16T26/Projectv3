@@ -15,9 +15,7 @@
         InitializeComponent()
         Me.projectConstants = New ProjectConstants(Me)
         Me.SetSize()
-        Me.Panel1.Controls.Add(New Room(Me)) 'TODO, change back to INTRO
-        'This button is only here to accept keyboard input
-        Me.Button1.Size = New Size(0, 0)
+        Me.Panel1.Controls.Add(New F1RA(Me)) 'TODO, change back to INTRO
     End Sub
 
     ''' <summary>
@@ -47,5 +45,12 @@
 
     Friend Sub StartGame()
         MsgBox("Bob")
+    End Sub
+
+    Friend Sub ChangeRoom(NewRoom As Room)
+        With Me.Panel1.Controls
+            .Clear()
+            .Add(NewRoom)
+        End With
     End Sub
 End Class

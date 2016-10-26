@@ -16,21 +16,19 @@
             .BackColor = Color.Transparent
             .ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
             .Font = New Font(FontFamily.GenericMonospace, 10)
-            '.Panel1.Height = ProjectConstants.ContentHeight
             .Label1.Text = "Movement"
             .Label2.Text = "W - Move up"
             .Label3.Text = "A - Move West"
             .Label4.Text = "S - Move Down"
             .Label5.Text = "D - Move East"
-
             .Width = ProjectConstants.ContentWidth
             .Height = ProjectConstants.ContentHeight
-            'With .PictureBox1
-            '    .Location = New Point(0, 0)
-            '    .Width = ProjectConstants.ContentWidth
-            '    .Height = ProjectConstants.ContentHeight
-            '    .Image = My.Resources.mal
-            'End With
+
+            With .Panel1
+                .Location = New Point(180, 240)
+                .Height = 240
+                .Width = 460
+            End With
         End With
     End Sub
 

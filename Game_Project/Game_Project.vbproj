@@ -94,6 +94,12 @@
     <Compile Include="Frames\MainMenu.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Frames\Rooms\F1RA.Designer.vb">
+      <DependentUpon>F1RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\F1RA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Frames\Rooms\Room.Designer.vb">
       <DependentUpon>Room.vb</DependentUpon>
     </Compile>
