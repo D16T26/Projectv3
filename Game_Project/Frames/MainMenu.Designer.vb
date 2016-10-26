@@ -23,9 +23,9 @@ Partial Class MainMenu
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.NavButton3 = New Game_Project.NavButton()
         Me.NavButton2 = New Game_Project.NavButton()
         Me.NavButton1 = New Game_Project.NavButton()
-        Me.NavButton3 = New Game_Project.NavButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,6 +36,20 @@ Partial Class MainMenu
         Me.PictureBox1.Size = New System.Drawing.Size(640, 480)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'NavButton3
+        '
+        Me.NavButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.NavButton3.FlatAppearance.BorderSize = 0
+        Me.NavButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NavButton3.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.NavButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.NavButton3.Location = New System.Drawing.Point(4, 424)
+        Me.NavButton3.Name = "NavButton3"
+        Me.NavButton3.Size = New System.Drawing.Size(140, 30)
+        Me.NavButton3.TabIndex = 3
+        Me.NavButton3.Text = "NavButton3"
+        Me.NavButton3.UseVisualStyleBackColor = False
         '
         'NavButton2
         '
@@ -64,20 +78,6 @@ Partial Class MainMenu
         Me.NavButton1.TabIndex = 1
         Me.NavButton1.Text = "NavButton1"
         Me.NavButton1.UseVisualStyleBackColor = False
-        '
-        'NavButton3
-        '
-        Me.NavButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton3.FlatAppearance.BorderSize = 0
-        Me.NavButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton3.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton3.Location = New System.Drawing.Point(4, 424)
-        Me.NavButton3.Name = "NavButton3"
-        Me.NavButton3.Size = New System.Drawing.Size(140, 30)
-        Me.NavButton3.TabIndex = 3
-        Me.NavButton3.Text = "NavButton3"
-        Me.NavButton3.UseVisualStyleBackColor = False
         '
         'MainMenu
         '

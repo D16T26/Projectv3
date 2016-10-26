@@ -1,5 +1,6 @@
 ﻿Public Class NavButton
     Inherits System.Windows.Forms.Button
+    Public ReadOnly Property author As String = "Sondre Grøneng"
     Private Property Selected As Boolean = False
     Friend Property NorthNav As NavButton
     Friend Property WestNav As NavButton

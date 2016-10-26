@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+    Public ReadOnly Property author As String = "Sondre Grøneng"
     'Mainly a guesstimate based on some testing in making it look right.
     'Due the form having borders, that are included in the Size property,
     'simply setting them to 640 and 480 does not work, as the actual
@@ -11,7 +12,7 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.SetSize()
-        Me.Panel1.Controls.Add(New MainMenu)
+        Me.Panel1.Controls.Add(New MainMenu(Me))
     End Sub
 
     ''' <summary>
