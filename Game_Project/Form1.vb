@@ -10,8 +10,8 @@
     Private ReadOnly Property FormTopBarWidth As Integer = 31
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Panel1.BackColor = Color.Black
         Me.SetSize()
+        Me.Panel1.Controls.Add(New MainMenu)
     End Sub
 
     ''' <summary>
@@ -24,5 +24,15 @@
         Me.Width = ProjectConstants.ContentWidth + 2 * FormborderWidth
         Me.Panel1.Height = ProjectConstants.ContentHeight
         Me.Panel1.Width = ProjectConstants.ContentWidth
+    End Sub
+
+    Friend Sub CleanExit()
+        'TODO add code for disposal, later
+        Application.Exit()
+        End
+    End Sub
+
+    Friend Sub StartGame()
+        Throw New NotImplementedException
     End Sub
 End Class
