@@ -13,7 +13,7 @@
 
     Public Sub New(Owner As Form1)
         Me.Owner = Owner
-        Me.Floor1RoomA = Nothing
+        Me.Floor1RoomA = New F1RA(Owner)
         Me.Floor2RoomA = Nothing
         Me.Floor3RoomA = Nothing
         Me.Floor4RoomA = Nothing

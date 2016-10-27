@@ -16,7 +16,6 @@
 
     Private Sub Button1_Click1(sender As Button, e As EventArgs) Handles DialogueButton.Click
         With Me
-            .HexKeyPanel.Show()
             .DialogueButton.Hide()
             .Label6.Text = """Mr. Frump har fire døtre, hver datter har en bror." & Environment.NewLine &
                              "Hvor mange unger har Mr. Frump?"""

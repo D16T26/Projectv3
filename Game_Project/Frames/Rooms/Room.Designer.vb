@@ -28,31 +28,32 @@ Partial Class Room
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.DialogueButton = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.HexKeyPanel = New System.Windows.Forms.Panel()
-        Me.B0 = New System.Windows.Forms.Button()
-        Me.B1 = New System.Windows.Forms.Button()
-        Me.B2 = New System.Windows.Forms.Button()
-        Me.B3 = New System.Windows.Forms.Button()
+        Me.BReset = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.BF = New System.Windows.Forms.Button()
         Me.B4 = New System.Windows.Forms.Button()
         Me.B5 = New System.Windows.Forms.Button()
+        Me.BE = New System.Windows.Forms.Button()
+        Me.B3 = New System.Windows.Forms.Button()
         Me.B6 = New System.Windows.Forms.Button()
+        Me.BD = New System.Windows.Forms.Button()
+        Me.B2 = New System.Windows.Forms.Button()
         Me.B7 = New System.Windows.Forms.Button()
+        Me.BC = New System.Windows.Forms.Button()
+        Me.B1 = New System.Windows.Forms.Button()
         Me.B8 = New System.Windows.Forms.Button()
+        Me.BB = New System.Windows.Forms.Button()
+        Me.B0 = New System.Windows.Forms.Button()
         Me.B9 = New System.Windows.Forms.Button()
         Me.BA = New System.Windows.Forms.Button()
-        Me.BB = New System.Windows.Forms.Button()
-        Me.BC = New System.Windows.Forms.Button()
-        Me.BD = New System.Windows.Forms.Button()
-        Me.BE = New System.Windows.Forms.Button()
-        Me.BF = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.BReset = New System.Windows.Forms.Button()
         Me.NavButton2 = New Game_Project.NavButton()
         Me.NavButton4 = New Game_Project.NavButton()
         Me.NavButton1 = New Game_Project.NavButton()
         Me.NavButton3 = New Game_Project.NavButton()
+        Me.KeyDownAssist = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.HexKeyPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -115,6 +116,14 @@ Partial Class Room
         Me.Panel1.Size = New System.Drawing.Size(460, 240)
         Me.Panel1.TabIndex = 5
         '
+        'DialogueButton
+        '
+        Me.DialogueButton.Location = New System.Drawing.Point(414, 194)
+        Me.DialogueButton.Name = "DialogueButton"
+        Me.DialogueButton.Size = New System.Drawing.Size(23, 23)
+        Me.DialogueButton.TabIndex = 6
+        Me.DialogueButton.UseVisualStyleBackColor = True
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -124,14 +133,6 @@ Partial Class Room
         Me.Label6.Size = New System.Drawing.Size(51, 17)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Label6"
-        '
-        'DialogueButton
-        '
-        Me.DialogueButton.Location = New System.Drawing.Point(414, 194)
-        Me.DialogueButton.Name = "DialogueButton"
-        Me.DialogueButton.Size = New System.Drawing.Size(23, 23)
-        Me.DialogueButton.TabIndex = 6
-        Me.DialogueButton.UseVisualStyleBackColor = True
         '
         'HexKeyPanel
         '
@@ -158,41 +159,36 @@ Partial Class Room
         Me.HexKeyPanel.Size = New System.Drawing.Size(117, 189)
         Me.HexKeyPanel.TabIndex = 6
         '
-        'B0
+        'BReset
         '
-        Me.B0.Location = New System.Drawing.Point(3, 43)
-        Me.B0.Name = "B0"
-        Me.B0.Size = New System.Drawing.Size(23, 23)
-        Me.B0.TabIndex = 7
-        Me.B0.Text = "0"
-        Me.B0.UseVisualStyleBackColor = True
+        Me.BReset.Location = New System.Drawing.Point(3, 160)
+        Me.BReset.Name = "BReset"
+        Me.BReset.Size = New System.Drawing.Size(110, 23)
+        Me.BReset.TabIndex = 21
+        Me.BReset.Text = "Reset"
+        Me.BReset.UseVisualStyleBackColor = True
         '
-        'B1
+        'TextBox1
         '
-        Me.B1.Location = New System.Drawing.Point(32, 43)
-        Me.B1.Name = "B1"
-        Me.B1.Size = New System.Drawing.Size(23, 23)
-        Me.B1.TabIndex = 8
-        Me.B1.Text = "1"
-        Me.B1.UseVisualStyleBackColor = True
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Courier New", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox1.MaxLength = 4
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(110, 38)
+        Me.TextBox1.TabIndex = 20
+        Me.TextBox1.Text = "AAAA"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'B2
+        'BF
         '
-        Me.B2.Location = New System.Drawing.Point(61, 43)
-        Me.B2.Name = "B2"
-        Me.B2.Size = New System.Drawing.Size(23, 23)
-        Me.B2.TabIndex = 8
-        Me.B2.Text = "2"
-        Me.B2.UseVisualStyleBackColor = True
-        '
-        'B3
-        '
-        Me.B3.Location = New System.Drawing.Point(90, 43)
-        Me.B3.Name = "B3"
-        Me.B3.Size = New System.Drawing.Size(23, 23)
-        Me.B3.TabIndex = 8
-        Me.B3.Text = "3"
-        Me.B3.UseVisualStyleBackColor = True
+        Me.BF.Location = New System.Drawing.Point(90, 130)
+        Me.BF.Name = "BF"
+        Me.BF.Size = New System.Drawing.Size(23, 23)
+        Me.BF.TabIndex = 19
+        Me.BF.Text = "F"
+        Me.BF.UseVisualStyleBackColor = True
         '
         'B4
         '
@@ -212,6 +208,24 @@ Partial Class Room
         Me.B5.Text = "5"
         Me.B5.UseVisualStyleBackColor = True
         '
+        'BE
+        '
+        Me.BE.Location = New System.Drawing.Point(61, 130)
+        Me.BE.Name = "BE"
+        Me.BE.Size = New System.Drawing.Size(23, 23)
+        Me.BE.TabIndex = 18
+        Me.BE.Text = "E"
+        Me.BE.UseVisualStyleBackColor = True
+        '
+        'B3
+        '
+        Me.B3.Location = New System.Drawing.Point(90, 43)
+        Me.B3.Name = "B3"
+        Me.B3.Size = New System.Drawing.Size(23, 23)
+        Me.B3.TabIndex = 8
+        Me.B3.Text = "3"
+        Me.B3.UseVisualStyleBackColor = True
+        '
         'B6
         '
         Me.B6.Location = New System.Drawing.Point(61, 72)
@@ -220,6 +234,24 @@ Partial Class Room
         Me.B6.TabIndex = 10
         Me.B6.Text = "6"
         Me.B6.UseVisualStyleBackColor = True
+        '
+        'BD
+        '
+        Me.BD.Location = New System.Drawing.Point(32, 130)
+        Me.BD.Name = "BD"
+        Me.BD.Size = New System.Drawing.Size(23, 23)
+        Me.BD.TabIndex = 17
+        Me.BD.Text = "D"
+        Me.BD.UseVisualStyleBackColor = True
+        '
+        'B2
+        '
+        Me.B2.Location = New System.Drawing.Point(61, 43)
+        Me.B2.Name = "B2"
+        Me.B2.Size = New System.Drawing.Size(23, 23)
+        Me.B2.TabIndex = 8
+        Me.B2.Text = "2"
+        Me.B2.UseVisualStyleBackColor = True
         '
         'B7
         '
@@ -230,6 +262,24 @@ Partial Class Room
         Me.B7.Text = "7"
         Me.B7.UseVisualStyleBackColor = True
         '
+        'BC
+        '
+        Me.BC.Location = New System.Drawing.Point(3, 130)
+        Me.BC.Name = "BC"
+        Me.BC.Size = New System.Drawing.Size(23, 23)
+        Me.BC.TabIndex = 16
+        Me.BC.Text = "C"
+        Me.BC.UseVisualStyleBackColor = True
+        '
+        'B1
+        '
+        Me.B1.Location = New System.Drawing.Point(32, 43)
+        Me.B1.Name = "B1"
+        Me.B1.Size = New System.Drawing.Size(23, 23)
+        Me.B1.TabIndex = 8
+        Me.B1.Text = "1"
+        Me.B1.UseVisualStyleBackColor = True
+        '
         'B8
         '
         Me.B8.Location = New System.Drawing.Point(3, 101)
@@ -238,6 +288,24 @@ Partial Class Room
         Me.B8.TabIndex = 12
         Me.B8.Text = "8"
         Me.B8.UseVisualStyleBackColor = True
+        '
+        'BB
+        '
+        Me.BB.Location = New System.Drawing.Point(90, 101)
+        Me.BB.Name = "BB"
+        Me.BB.Size = New System.Drawing.Size(23, 23)
+        Me.BB.TabIndex = 15
+        Me.BB.Text = "B"
+        Me.BB.UseVisualStyleBackColor = True
+        '
+        'B0
+        '
+        Me.B0.Location = New System.Drawing.Point(3, 43)
+        Me.B0.Name = "B0"
+        Me.B0.Size = New System.Drawing.Size(23, 23)
+        Me.B0.TabIndex = 7
+        Me.B0.Text = "0"
+        Me.B0.UseVisualStyleBackColor = True
         '
         'B9
         '
@@ -256,72 +324,6 @@ Partial Class Room
         Me.BA.TabIndex = 14
         Me.BA.Text = "A"
         Me.BA.UseVisualStyleBackColor = True
-        '
-        'BB
-        '
-        Me.BB.Location = New System.Drawing.Point(90, 101)
-        Me.BB.Name = "BB"
-        Me.BB.Size = New System.Drawing.Size(23, 23)
-        Me.BB.TabIndex = 15
-        Me.BB.Text = "B"
-        Me.BB.UseVisualStyleBackColor = True
-        '
-        'BC
-        '
-        Me.BC.Location = New System.Drawing.Point(3, 130)
-        Me.BC.Name = "BC"
-        Me.BC.Size = New System.Drawing.Size(23, 23)
-        Me.BC.TabIndex = 16
-        Me.BC.Text = "C"
-        Me.BC.UseVisualStyleBackColor = True
-        '
-        'BD
-        '
-        Me.BD.Location = New System.Drawing.Point(32, 130)
-        Me.BD.Name = "BD"
-        Me.BD.Size = New System.Drawing.Size(23, 23)
-        Me.BD.TabIndex = 17
-        Me.BD.Text = "D"
-        Me.BD.UseVisualStyleBackColor = True
-        '
-        'BE
-        '
-        Me.BE.Location = New System.Drawing.Point(61, 130)
-        Me.BE.Name = "BE"
-        Me.BE.Size = New System.Drawing.Size(23, 23)
-        Me.BE.TabIndex = 18
-        Me.BE.Text = "E"
-        Me.BE.UseVisualStyleBackColor = True
-        '
-        'BF
-        '
-        Me.BF.Location = New System.Drawing.Point(90, 130)
-        Me.BF.Name = "BF"
-        Me.BF.Size = New System.Drawing.Size(23, 23)
-        Me.BF.TabIndex = 19
-        Me.BF.Text = "F"
-        Me.BF.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.Font = New System.Drawing.Font("Courier New", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox1.MaxLength = 4
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(110, 38)
-        Me.TextBox1.TabIndex = 20
-        Me.TextBox1.Text = "AAAA"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'BReset
-        '
-        Me.BReset.Location = New System.Drawing.Point(3, 160)
-        Me.BReset.Name = "BReset"
-        Me.BReset.Size = New System.Drawing.Size(110, 23)
-        Me.BReset.TabIndex = 21
-        Me.BReset.Text = "Reset"
-        Me.BReset.UseVisualStyleBackColor = True
         '
         'NavButton2
         '
@@ -381,10 +383,20 @@ Partial Class Room
         Me.NavButton3.Text = "NavButton3"
         Me.NavButton3.UseVisualStyleBackColor = False
         '
+        'KeyDownAssist
+        '
+        Me.KeyDownAssist.Location = New System.Drawing.Point(7, 447)
+        Me.KeyDownAssist.Name = "KeyDownAssist"
+        Me.KeyDownAssist.Size = New System.Drawing.Size(167, 23)
+        Me.KeyDownAssist.TabIndex = 7
+        Me.KeyDownAssist.Text = "KeyDownAssist"
+        Me.KeyDownAssist.UseVisualStyleBackColor = True
+        '
         'Room
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.KeyDownAssist)
         Me.Controls.Add(Me.HexKeyPanel)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label5)
@@ -434,4 +446,5 @@ Partial Class Room
     Friend WithEvents B0 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents BReset As Button
+    Friend WithEvents KeyDownAssist As Button
 End Class
