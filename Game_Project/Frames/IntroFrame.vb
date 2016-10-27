@@ -24,7 +24,7 @@ Public Class IntroFrame
     End Sub
 
     Private Sub IntroFrame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.TextBox1.Select()
+        Me.TextBox1.Focus()
     End Sub
 
     Private Sub StartGameButton_Click(sender As Object, e As EventArgs) Handles StartGameButton.Click
@@ -42,6 +42,7 @@ Public Class IntroFrame
                 "og låst henne inn på toppen av Frump Tower. Du må redde henne" & Environment.NewLine &
                 "for meg! Beveg deg gjennom rommene til toppen for å finne henne," & Environment.NewLine &
                 "lykke til" & If(Owner.playerName = "", "", " ") & Owner.playerName & "!" 'Remove the space if the player left playername blank
+            e.SuppressKeyPress = True 'Disables the ding when pressing enter in a text box.
         End If
     End Sub
 End Class
