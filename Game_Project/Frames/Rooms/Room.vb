@@ -55,6 +55,10 @@ Public Class Room
         Dim r As Rectangle = New Rectangle(0, 0, ProjectConstants.ContentWidth, ProjectConstants.ContentHeight)
         e.Graphics.DrawImage(My.Resources.mal, r)
     End Sub
+
+    Private Sub Room_Load(sender As Object, e As EventArgs) Handles Me.Load
+        DialogueButton.Focus()
+    End Sub
 End Class
 
 

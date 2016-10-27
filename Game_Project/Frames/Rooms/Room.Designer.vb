@@ -29,8 +29,13 @@ Partial Class Room
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DialogueButton = New System.Windows.Forms.Button()
+        Me.NavButton2 = New Game_Project.NavButton()
+        Me.NavButton4 = New Game_Project.NavButton()
+        Me.NavButton3 = New Game_Project.NavButton()
+        Me.NavButton1 = New Game_Project.NavButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.HexKeyPanel = New System.Windows.Forms.Panel()
+        Me.BSubmit = New System.Windows.Forms.Button()
         Me.BReset = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.BF = New System.Windows.Forms.Button()
@@ -50,11 +55,6 @@ Partial Class Room
         Me.B9 = New System.Windows.Forms.Button()
         Me.BA = New System.Windows.Forms.Button()
         Me.KeyDownAssist = New System.Windows.Forms.Button()
-        Me.BSubmit = New System.Windows.Forms.Button()
-        Me.NavButton2 = New Game_Project.NavButton()
-        Me.NavButton4 = New Game_Project.NavButton()
-        Me.NavButton3 = New Game_Project.NavButton()
-        Me.NavButton1 = New Game_Project.NavButton()
         Me.Panel1.SuspendLayout()
         Me.HexKeyPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -118,7 +118,7 @@ Partial Class Room
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.NavButton3)
         Me.Panel1.Location = New System.Drawing.Point(180, 240)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(460, 240)
         Me.Panel1.TabIndex = 5
@@ -126,17 +126,99 @@ Partial Class Room
         'DialogueButton
         '
         Me.DialogueButton.Location = New System.Drawing.Point(407, 186)
-        Me.DialogueButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DialogueButton.Margin = New System.Windows.Forms.Padding(4)
         Me.DialogueButton.Name = "DialogueButton"
         Me.DialogueButton.Size = New System.Drawing.Size(30, 30)
         Me.DialogueButton.TabIndex = 6
         Me.DialogueButton.UseVisualStyleBackColor = True
         '
+        'NavButton2
+        '
+        Me.NavButton2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.NavButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.NavButton2.EastNav = Me.NavButton2
+        Me.NavButton2.FlatAppearance.BorderSize = 0
+        Me.NavButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NavButton2.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.NavButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.NavButton2.Location = New System.Drawing.Point(231, 168)
+        Me.NavButton2.Margin = New System.Windows.Forms.Padding(4)
+        Me.NavButton2.Name = "NavButton2"
+        Me.NavButton2.NorthNav = Me.NavButton2
+        Me.NavButton2.Size = New System.Drawing.Size(225, 30)
+        Me.NavButton2.SouthNav = Me.NavButton4
+        Me.NavButton2.TabIndex = 7
+        Me.NavButton2.Text = "NavButton2"
+        Me.NavButton2.UseVisualStyleBackColor = False
+        Me.NavButton2.Visible = False
+        Me.NavButton2.WestNav = Me.NavButton1
+        '
+        'NavButton4
+        '
+        Me.NavButton4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.NavButton4.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.NavButton4.EastNav = Me.NavButton4
+        Me.NavButton4.FlatAppearance.BorderSize = 0
+        Me.NavButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NavButton4.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.NavButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.NavButton4.Location = New System.Drawing.Point(231, 206)
+        Me.NavButton4.Margin = New System.Windows.Forms.Padding(4)
+        Me.NavButton4.Name = "NavButton4"
+        Me.NavButton4.NorthNav = Me.NavButton2
+        Me.NavButton4.Size = New System.Drawing.Size(225, 30)
+        Me.NavButton4.SouthNav = Me.NavButton4
+        Me.NavButton4.TabIndex = 9
+        Me.NavButton4.Text = "NavButton4"
+        Me.NavButton4.UseVisualStyleBackColor = False
+        Me.NavButton4.Visible = False
+        Me.NavButton4.WestNav = Me.NavButton3
+        '
+        'NavButton3
+        '
+        Me.NavButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.NavButton3.EastNav = Me.NavButton4
+        Me.NavButton3.FlatAppearance.BorderSize = 0
+        Me.NavButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NavButton3.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.NavButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.NavButton3.Location = New System.Drawing.Point(4, 206)
+        Me.NavButton3.Margin = New System.Windows.Forms.Padding(4)
+        Me.NavButton3.Name = "NavButton3"
+        Me.NavButton3.NorthNav = Me.NavButton1
+        Me.NavButton3.Size = New System.Drawing.Size(225, 30)
+        Me.NavButton3.SouthNav = Me.NavButton3
+        Me.NavButton3.TabIndex = 8
+        Me.NavButton3.Text = "NavButton3"
+        Me.NavButton3.UseVisualStyleBackColor = False
+        Me.NavButton3.Visible = False
+        Me.NavButton3.WestNav = Me.NavButton3
+        '
+        'NavButton1
+        '
+        Me.NavButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.NavButton1.EastNav = Me.NavButton2
+        Me.NavButton1.FlatAppearance.BorderSize = 0
+        Me.NavButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NavButton1.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.NavButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.NavButton1.Location = New System.Drawing.Point(4, 168)
+        Me.NavButton1.Margin = New System.Windows.Forms.Padding(4)
+        Me.NavButton1.Name = "NavButton1"
+        Me.NavButton1.NorthNav = Me.NavButton1
+        Me.NavButton1.Size = New System.Drawing.Size(225, 30)
+        Me.NavButton1.SouthNav = Me.NavButton3
+        Me.NavButton1.TabIndex = 6
+        Me.NavButton1.Text = "NavButton1"
+        Me.NavButton1.UseVisualStyleBackColor = False
+        Me.NavButton1.Visible = False
+        Me.NavButton1.WestNav = Me.NavButton1
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(12, 12)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(12, 12, 12, 12)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(12)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(69, 20)
         Me.Label6.TabIndex = 0
@@ -167,11 +249,20 @@ Partial Class Room
         Me.HexKeyPanel.Controls.Add(Me.BA)
         Me.HexKeyPanel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.HexKeyPanel.Location = New System.Drawing.Point(354, 17)
-        Me.HexKeyPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.HexKeyPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.HexKeyPanel.Name = "HexKeyPanel"
         Me.HexKeyPanel.Size = New System.Drawing.Size(114, 184)
         Me.HexKeyPanel.TabIndex = 6
         Me.HexKeyPanel.Visible = False
+        '
+        'BSubmit
+        '
+        Me.BSubmit.Location = New System.Drawing.Point(58, 154)
+        Me.BSubmit.Name = "BSubmit"
+        Me.BSubmit.Size = New System.Drawing.Size(50, 23)
+        Me.BSubmit.TabIndex = 22
+        Me.BSubmit.Text = "S"
+        Me.BSubmit.UseVisualStyleBackColor = True
         '
         'BReset
         '
@@ -359,103 +450,12 @@ Partial Class Room
         'KeyDownAssist
         '
         Me.KeyDownAssist.Location = New System.Drawing.Point(4, 447)
-        Me.KeyDownAssist.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.KeyDownAssist.Margin = New System.Windows.Forms.Padding(4)
         Me.KeyDownAssist.Name = "KeyDownAssist"
-        Me.KeyDownAssist.Size = New System.Drawing.Size(168, 29)
+        Me.KeyDownAssist.Size = New System.Drawing.Size(172, 29)
         Me.KeyDownAssist.TabIndex = 7
         Me.KeyDownAssist.Text = "KeyDownAssist"
         Me.KeyDownAssist.UseVisualStyleBackColor = True
-        '
-        'BSubmit
-        '
-        Me.BSubmit.Location = New System.Drawing.Point(58, 154)
-        Me.BSubmit.Name = "BSubmit"
-        Me.BSubmit.Size = New System.Drawing.Size(50, 23)
-        Me.BSubmit.TabIndex = 22
-        Me.BSubmit.Text = "S"
-        Me.BSubmit.UseVisualStyleBackColor = True
-        '
-        'NavButton2
-        '
-        Me.NavButton2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NavButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton2.EastNav = Me.NavButton2
-        Me.NavButton2.FlatAppearance.BorderSize = 0
-        Me.NavButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton2.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton2.Location = New System.Drawing.Point(231, 168)
-        Me.NavButton2.Margin = New System.Windows.Forms.Padding(4)
-        Me.NavButton2.Name = "NavButton2"
-        Me.NavButton2.NorthNav = Me.NavButton2
-        Me.NavButton2.Size = New System.Drawing.Size(225, 30)
-        Me.NavButton2.SouthNav = Me.NavButton4
-        Me.NavButton2.TabIndex = 7
-        Me.NavButton2.Text = "NavButton2"
-        Me.NavButton2.UseVisualStyleBackColor = False
-        Me.NavButton2.Visible = False
-        Me.NavButton2.WestNav = Me.NavButton1
-        '
-        'NavButton4
-        '
-        Me.NavButton4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NavButton4.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton4.EastNav = Me.NavButton4
-        Me.NavButton4.FlatAppearance.BorderSize = 0
-        Me.NavButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton4.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton4.Location = New System.Drawing.Point(231, 206)
-        Me.NavButton4.Margin = New System.Windows.Forms.Padding(4)
-        Me.NavButton4.Name = "NavButton4"
-        Me.NavButton4.NorthNav = Me.NavButton2
-        Me.NavButton4.Size = New System.Drawing.Size(225, 30)
-        Me.NavButton4.SouthNav = Me.NavButton4
-        Me.NavButton4.TabIndex = 9
-        Me.NavButton4.Text = "NavButton4"
-        Me.NavButton4.UseVisualStyleBackColor = False
-        Me.NavButton4.Visible = False
-        Me.NavButton4.WestNav = Me.NavButton3
-        '
-        'NavButton3
-        '
-        Me.NavButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton3.EastNav = Me.NavButton4
-        Me.NavButton3.FlatAppearance.BorderSize = 0
-        Me.NavButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton3.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton3.Location = New System.Drawing.Point(4, 206)
-        Me.NavButton3.Margin = New System.Windows.Forms.Padding(4)
-        Me.NavButton3.Name = "NavButton3"
-        Me.NavButton3.NorthNav = Me.NavButton1
-        Me.NavButton3.Size = New System.Drawing.Size(225, 30)
-        Me.NavButton3.SouthNav = Me.NavButton3
-        Me.NavButton3.TabIndex = 8
-        Me.NavButton3.Text = "NavButton3"
-        Me.NavButton3.UseVisualStyleBackColor = False
-        Me.NavButton3.Visible = False
-        Me.NavButton3.WestNav = Me.NavButton3
-        '
-        'NavButton1
-        '
-        Me.NavButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton1.EastNav = Me.NavButton2
-        Me.NavButton1.FlatAppearance.BorderSize = 0
-        Me.NavButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton1.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton1.Location = New System.Drawing.Point(4, 168)
-        Me.NavButton1.Margin = New System.Windows.Forms.Padding(4)
-        Me.NavButton1.Name = "NavButton1"
-        Me.NavButton1.NorthNav = Me.NavButton1
-        Me.NavButton1.Size = New System.Drawing.Size(225, 30)
-        Me.NavButton1.SouthNav = Me.NavButton3
-        Me.NavButton1.TabIndex = 6
-        Me.NavButton1.Text = "NavButton1"
-        Me.NavButton1.UseVisualStyleBackColor = False
-        Me.NavButton1.Visible = False
-        Me.NavButton1.WestNav = Me.NavButton1
         '
         'Room
         '
@@ -471,7 +471,7 @@ Partial Class Room
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Room"
         Me.Size = New System.Drawing.Size(640, 480)
         Me.Panel1.ResumeLayout(False)

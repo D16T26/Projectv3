@@ -60,7 +60,6 @@
     Private Sub CorrectAnswer_Click(sender As NavButton, e As EventArgs) Handles NavButton2.Click
         With Me
             .riddleWon = True
-            .DialogueButton.Show()
             .NavButton1.Hide()
             .NavButton2.Hide()
             .NavButton3.Hide()
