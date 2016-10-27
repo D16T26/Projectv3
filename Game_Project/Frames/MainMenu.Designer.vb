@@ -22,80 +22,87 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.NavButton3 = New Game_Project.NavButton()
-        Me.NavButton2 = New Game_Project.NavButton()
-        Me.NavButton1 = New Game_Project.NavButton()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ExitButton = New Game_Project.NavButton()
+        Me.StartButton = New Game_Project.NavButton()
+        Me.EnterLevelCodeButton = New Game_Project.NavButton()
         Me.SuspendLayout()
         '
-        'PictureBox1
+        'ExitButton
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(640, 480)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.ExitButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.ExitButton.EastNav = Me.ExitButton
+        Me.ExitButton.FlatAppearance.BorderSize = 0
+        Me.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ExitButton.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.ExitButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.ExitButton.Location = New System.Drawing.Point(0, 419)
+        Me.ExitButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.ExitButton.Name = "ExitButton"
+        Me.ExitButton.NorthNav = Me.StartButton
+        Me.ExitButton.Size = New System.Drawing.Size(640, 30)
+        Me.ExitButton.SouthNav = Me.StartButton
+        Me.ExitButton.TabIndex = 3
+        Me.ExitButton.Text = "    EXIT"
+        Me.ExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ExitButton.UseVisualStyleBackColor = False
+        Me.ExitButton.WestNav = Me.ExitButton
         '
-        'NavButton3
+        'StartButton
         '
-        Me.NavButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton3.FlatAppearance.BorderSize = 0
-        Me.NavButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton3.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton3.Location = New System.Drawing.Point(4, 424)
-        Me.NavButton3.Name = "NavButton3"
-        Me.NavButton3.Size = New System.Drawing.Size(140, 30)
-        Me.NavButton3.TabIndex = 3
-        Me.NavButton3.Text = "NavButton3"
-        Me.NavButton3.UseVisualStyleBackColor = False
+        Me.StartButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.StartButton.EastNav = Me.StartButton
+        Me.StartButton.FlatAppearance.BorderSize = 0
+        Me.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.StartButton.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.StartButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.StartButton.Location = New System.Drawing.Point(0, 359)
+        Me.StartButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.StartButton.Name = "StartButton"
+        Me.StartButton.NorthNav = Me.ExitButton
+        Me.StartButton.Size = New System.Drawing.Size(640, 30)
+        Me.StartButton.SouthNav = Me.ExitButton
+        Me.StartButton.TabIndex = 1
+        Me.StartButton.Text = "    START"
+        Me.StartButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.StartButton.UseVisualStyleBackColor = False
+        Me.StartButton.WestNav = Me.StartButton
         '
-        'NavButton2
+        'EnterLevelCodeButton
         '
-        Me.NavButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton2.FlatAppearance.BorderSize = 0
-        Me.NavButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton2.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton2.Location = New System.Drawing.Point(4, 387)
-        Me.NavButton2.Name = "NavButton2"
-        Me.NavButton2.Size = New System.Drawing.Size(140, 30)
-        Me.NavButton2.TabIndex = 2
-        Me.NavButton2.Text = "NavButton2"
-        Me.NavButton2.UseVisualStyleBackColor = False
-        '
-        'NavButton1
-        '
-        Me.NavButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
-        Me.NavButton1.FlatAppearance.BorderSize = 0
-        Me.NavButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NavButton1.Font = New System.Drawing.Font("Courier New", 10.0!)
-        Me.NavButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.NavButton1.Location = New System.Drawing.Point(4, 351)
-        Me.NavButton1.Name = "NavButton1"
-        Me.NavButton1.Size = New System.Drawing.Size(140, 30)
-        Me.NavButton1.TabIndex = 1
-        Me.NavButton1.Text = "NavButton1"
-        Me.NavButton1.UseVisualStyleBackColor = False
+        Me.EnterLevelCodeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.EnterLevelCodeButton.EastNav = Me.EnterLevelCodeButton
+        Me.EnterLevelCodeButton.Enabled = False
+        Me.EnterLevelCodeButton.FlatAppearance.BorderSize = 0
+        Me.EnterLevelCodeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.EnterLevelCodeButton.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.EnterLevelCodeButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.EnterLevelCodeButton.Location = New System.Drawing.Point(0, 389)
+        Me.EnterLevelCodeButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.EnterLevelCodeButton.Name = "EnterLevelCodeButton"
+        Me.EnterLevelCodeButton.NorthNav = Me.StartButton
+        Me.EnterLevelCodeButton.Size = New System.Drawing.Size(640, 30)
+        Me.EnterLevelCodeButton.SouthNav = Me.ExitButton
+        Me.EnterLevelCodeButton.TabIndex = 2
+        Me.EnterLevelCodeButton.Text = "    ENTER LEVEL CODE                                         (Not implemented)"
+        Me.EnterLevelCodeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.EnterLevelCodeButton.UseVisualStyleBackColor = False
+        Me.EnterLevelCodeButton.WestNav = Me.EnterLevelCodeButton
         '
         'MainMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.NavButton3)
-        Me.Controls.Add(Me.NavButton2)
-        Me.Controls.Add(Me.NavButton1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.ExitButton)
+        Me.Controls.Add(Me.EnterLevelCodeButton)
+        Me.Controls.Add(Me.StartButton)
+        Me.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MainMenu"
         Me.Size = New System.Drawing.Size(640, 480)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents NavButton1 As NavButton
-    Friend WithEvents NavButton2 As NavButton
-    Friend WithEvents NavButton3 As NavButton
+    Friend WithEvents StartButton As NavButton
+    Friend WithEvents EnterLevelCodeButton As NavButton
+    Friend WithEvents ExitButton As NavButton
 End Class

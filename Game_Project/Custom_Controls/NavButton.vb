@@ -2,10 +2,10 @@
     Inherits System.Windows.Forms.Button
     Public ReadOnly Property author As String = "Sondre Grøneng"
     Private Property Selected As Boolean = False
-    Friend Property NorthNav As NavButton
-    Friend Property WestNav As NavButton
-    Friend Property SouthNav As NavButton
-    Friend Property EastNav As NavButton
+    Public Property NorthNav As NavButton
+    Public Property WestNav As NavButton
+    Public Property SouthNav As NavButton
+    Public Property EastNav As NavButton
     'Private ReadOnly Property bColor As Color = ColorTranslator.FromHtml(My.Resources.BackColor)
     'Private ReadOnly Property fColor As Color = ColorTranslator.FromHtml(My.Resources.ForeColor)
 
