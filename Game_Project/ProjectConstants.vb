@@ -14,19 +14,19 @@
     Public Sub New(Owner As Form1)
         Me.Owner = Owner
         Me.Floor1RoomA = New F1RA(Owner)
-        Me.Floor2RoomA = Nothing
-        Me.Floor3RoomA = Nothing
-        Me.Floor4RoomA = Nothing
-        Me.Floor5RoomA = Nothing
-        Me.Floor6RoomA = Nothing
+        Me.Floor2RoomA = New F2RA(Owner)
+        Me.Floor3RoomA = New F3RA(Owner)
+        Me.Floor4RoomA = New F4RA(Owner)
+        Me.Floor5RoomA = New F5RA(Owner)
+        Me.Floor6RoomA = New F6RA(Owner)
     End Sub
 
     Friend Sub Dispose()
         Me.Floor1RoomA.Dispose()
-        'Me.Floor2RoomA.Dispose()
-        'Me.Floor3RoomA.Dispose()
-        'Me.Floor4RoomA.Dispose()
-        'Me.Floor5RoomA.Dispose()
-        'Me.Floor6RoomA.Dispose()
+        Me.Floor2RoomA.Dispose()
+        Me.Floor3RoomA.Dispose()
+        Me.Floor4RoomA.Dispose()
+        Me.Floor5RoomA.Dispose()
+        Me.Floor6RoomA.Dispose()
     End Sub
 End Class
