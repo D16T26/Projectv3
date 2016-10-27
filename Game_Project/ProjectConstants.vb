@@ -20,5 +20,4 @@
         Me.Floor5RoomA = Nothing
         Me.Floor6RoomA = Nothing
     End Sub
-
 End Class

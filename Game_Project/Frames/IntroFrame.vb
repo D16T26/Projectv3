@@ -1,53 +1,77 @@
-﻿Public Class IntroFrame
+﻿''' <summary>
+''' This is, as you can see, the frame handling the intro sequence.
+''' it starts of with the queen introducing herself while askign the
+''' player for his/her name. When the player has selected their name
+''' she briefly introduces the task at hand and wishing the player
+''' good luck. the player can then move on.
+''' 
+''' Sequence can also be quickly skipped by pressing enter twice.
+''' Doing this will leave the player without having selected a name,
+''' the horror, I know.
+''' </summary>
+Public Class IntroFrame
     Public ReadOnly Property author As String = "Sondre Grøneng"
-    Private ReadOnly Property Owner As Form1
+    Private ReadOnly Property Owner As Form1 'For communcating with form1
 
     Public Sub New(Owner As Form1)
-        InitializeComponent()
+        InitializeComponent() 'Without this, everything breaks.
         Me.Owner = Owner
-        Me.Width = ProjectConstants.ContentWidth
-        Me.Height = ProjectConstants.ContentHeight
         Me.BackColor = ColorTranslator.FromHtml(My.Resources.BackColor)
-        Me.SetUpLabel1()
-        Me.SetUpNavButton1()
-    End Sub
-
-    Private Sub SetUpLabel1()
-        With Me.Label1
-            .ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
-            .Location = New Point(.Location.X + 20, .Location.Y)
-            .Font = New Font(FontFamily.GenericMonospace, 10)
-            .Text = Me.IntroText
-        End With
-    End Sub
-
-    Private Sub SetUpNavButton1()
-        With Me.NavButton1
-            .Location = New Point(0, ProjectConstants.ContentHeight - (.Height + 50))
-            .Font = New Font(FontFamily.GenericMonospace, 10)
-            .Width = ProjectConstants.ContentWidth
-            .TextAlign = ContentAlignment.TopLeft
-            .Text = " - Press ENTER/SPACE to continue"
-        End With
+        Me.ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
+        Me.Label1.Text =
+            "Hei jeg er dronning Chillary Klinton! Jeg trenger din hjelp!" & Environment.NewLine &
+            "Hva heter du?”
     End Sub
 
     Private Sub IntroFrame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.NavButton1.Focus()
+        Me.TextBox1.Select()
     End Sub
 
-    Private Function IntroText() As String
-        'totally not a template
-        Return "Lorem ipsum dolor sit amet, quaeque repudiandae qui cu. Quod oporteat vis" & Environment.NewLine &
-               "et, est In novum platonem reformidans. Ea has esse consulatu. Ne eirmod" & Environment.NewLine &
-               "sapientem vix. Pri eirmod complectitur reprehendunt in. Ius modo agam" & Environment.NewLine &
-               "oporteat et. Sed te dolore facilis adolescens, vivendo appareat scriptorem" & Environment.NewLine &
-               "at cum. Vix te mentitum adolescens. No vel zril ridens atomorum, an quo" & Environment.NewLine &
-               "hinc dolore postea. No fabulas convenire adversarium his, est alienum" & Environment.NewLine &
-               "singulis ad, in erat ornatus eos. Dolorum omnesque molestiae cu cum," & Environment.NewLine &
-               "mandamus recteque id pri."
-    End Function
-
-    Private Sub NavButton1_Click(sender As Object, e As EventArgs) Handles NavButton1.Click
+    Private Sub StartGameButton_Click(sender As Object, e As EventArgs) Handles StartGameButton.Click
         Me.Owner.StartGame()
     End Sub
+
+    Private Sub NameTextBox_Keydown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Owner.playerName = TextBox1.Text
+            TextBox1.Hide()
+            StartGameButton.Show()
+            StartGameButton.Select()
+            Label1.Text =
+                "Erkefienden min, Ronald Frump, har kidnappet min datter Kelsey" & Environment.NewLine &
+                "og låst henne inn på toppen av Frump Tower. Du må redde henne" & Environment.NewLine &
+                "for meg! Beveg deg gjennom rommene til toppen for å finne henne," & Environment.NewLine &
+                "lykke til" & If(Owner.playerName = "", "", " ") & Owner.playerName & "!" 'Remove the space if the player left playername blank
+        End If
+    End Sub
 End Class
+
+'From a time back when, for some reason, size didn't work properly
+'unless i wrote it in code.
+'that SHOULD be fixed...
+
+'Private Sub SetUpNavButton1()
+'    With Me.NavButton1
+'        .Location = New Point(0, ProjectConstants.ContentHeight - (.Height + 50))
+'        .Width = ProjectConstants.ContentWidth
+'        .TextAlign = ContentAlignment.TopLeft
+
+'        .Hide()
+'    End With
+'End Sub
+
+'Private Sub SetUpLabel1()
+'    With Me.Label1
+'        .ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
+'        .Location = New Point(.Location.X + 20, .Location.Y)
+'        .Text =
+'            "Hei jeg er dronning Chillary Klinton! Jeg trenger din hjelp!" & Environment.NewLine &
+'            "Hva heter du?”
+'    End With
+'End Sub
+
+'Me.Width = ProjectConstants.ContentWidth
+'Me.Height = ProjectConstants.ContentHeight
+'Me.Font = New Font(FontFamily.GenericMonospace, 10)
+
+'NavButton1.Text = " - Press ENTER/SPACE to continue"

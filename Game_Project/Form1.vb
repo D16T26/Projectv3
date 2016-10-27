@@ -15,7 +15,7 @@
         InitializeComponent()
         Me.projectConstants = New ProjectConstants(Me)
         Me.SetSize()
-        Me.Panel1.Controls.Add(New F1RA(Me)) 'TODO, change back to INTRO
+        Me.Panel1.Controls.Add(New IntroFrame(Me)) 'TODO, change back to INTRO
     End Sub
 
     ''' <summary>
@@ -44,7 +44,7 @@
     End Sub
 
     Friend Sub StartGame()
-        MsgBox("Bob")
+        Me.ChangeRoom(projectConstants.Floor1RoomA)
     End Sub
 
     Friend Sub ChangeRoom(NewRoom As Room)
@@ -53,4 +53,20 @@
             .Add(NewRoom)
         End With
     End Sub
+
+    Private pName As String = ""
+    Private playerNameAssigned As Boolean = False
+    'Name of the player, shocking, I know.
+    'You can "get" the name as many times as you want, but you can only assign it once
+    Friend Property playerName As String
+        Get
+            Return pName
+        End Get
+        Set(value As String)
+            If Not playerNameAssigned Then
+                pName = value
+                playerNameAssigned = True
+            End If
+        End Set
+    End Property
 End Class
