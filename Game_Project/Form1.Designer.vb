@@ -22,22 +22,25 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ContentPanel = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
-        'Panel1
+        'ContentPanel
         '
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(640, 480)
-        Me.Panel1.TabIndex = 0
+        Me.ContentPanel.Location = New System.Drawing.Point(0, 0)
+        Me.ContentPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ContentPanel.Name = "ContentPanel"
+        Me.ContentPanel.Size = New System.Drawing.Size(640, 480)
+        Me.ContentPanel.TabIndex = 0
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(640, 481)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.ContentPanel)
+        Me.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
@@ -47,5 +50,5 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ContentPanel As Panel
 End Class

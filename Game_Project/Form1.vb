@@ -1,43 +1,30 @@
-﻿Public Class Form1
+﻿Imports System.ComponentModel
+''' <summary>
+''' The actual window holding the game. acts as a medium between different frames
+''' as well. works like the main controller in a way. Even though most actions are
+''' still handled in their individual frames. you move between them here.
+''' </summary>
+Public Class Form1
     Public ReadOnly Property author As String = "Sondre Grøneng"
-    'Mainly a guesstimate based on some testing in making it look right.
-    'Due the form having borders, that are included in the Size property,
-    'simply setting them to 640 and 480 does not work, as the actual
-    'window would be too small. the width looked right when I added 16
-    'to 640, thus I deduced this property.
-    Private ReadOnly Property FormborderWidth As Integer = 8
-    'Same as for FormBordereWidth, it looked right i added 39 to 480
-    'so I subtracted 8 and made this property
-    Private ReadOnly Property FormTopBarWidth As Integer = 31
+    ''' <summary>
+    ''' Main model of the game. holds things like all the rooms.
+    ''' at the time of writing, the rooms are stored in individual
+    ''' readonlies. If they are not. I forgot to edit this comment.
+    ''' </summary>
     Friend ReadOnly Property projectConstants As ProjectConstants
 
     Public Sub New()
-        InitializeComponent()
+        InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.SetSize()
-        Me.Panel1.Controls.Add(New IntroFrame(Me)) 'TODO, change back to INTRO
+        Me.ContentPanel.Controls.Add(New MainMenu(Me)) 'TODO, change back to INTRO
     End Sub
 
     ''' <summary>
-    ''' For some unknown reason, setting the size in the designer did not
-    ''' yield the right result so I was forced to set the size again
-    ''' programtically.
+    ''' IntroFrame is not a subclass of Room, thus I cant use changeroom to hax
+    ''' this one, shame.
     ''' </summary>
-    Private Sub SetSize()
-        Me.Height = ProjectConstants.ContentHeight + FormTopBarWidth + FormborderWidth
-        Me.Width = ProjectConstants.ContentWidth + 2 * FormborderWidth
-        Me.Panel1.Height = ProjectConstants.ContentHeight
-        Me.Panel1.Width = ProjectConstants.ContentWidth
-    End Sub
-
-    Friend Sub CleanExit()
-        'TODO add code for disposal, later
-        Application.Exit()
-        End
-    End Sub
-
     Friend Sub GoToIntro()
-        With Me.Panel1.Controls
+        With Me.ContentPanel.Controls
             .Clear()
             .Add(New IntroFrame(Me))
         End With
@@ -47,10 +34,22 @@
         Me.ChangeRoom(projectConstants.Floor1RoomA)
     End Sub
 
-    Friend Sub ChangeRoom(NewRoom As Room)
-        With Me.Panel1.Controls
+    ''' <summary>
+    ''' Changes the currently displayed room. the previous room is
+    ''' is simply cleared from the contentPanel. it is sitll stored in
+    ''' projectConstants... Which I will need a better name for now that
+    ''' it does more...
+    ''' 
+    ''' point is. it is stored there, so the state is saved.
+    ''' another option in this area would be to store the state some other way
+    ''' and dispose them everytime, but with a program as small as this. I am
+    ''' not entirely sure that it would be worth the effort.
+    ''' </summary>
+    ''' <param name="newRoom">The new room that will be shown.</param>
+    Friend Sub ChangeRoom(newRoom As Room)
+        With Me.ContentPanel.Controls
             .Clear()
-            .Add(NewRoom)
+            .Add(newRoom)
         End With
     End Sub
 
@@ -69,4 +68,38 @@
             End If
         End Set
     End Property
+
+    'Anything related to closing of game is handled here.
+
+    Friend Sub CleanExit()
+        Application.Exit()
+        End
+    End Sub
+
+    Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Me.projectConstants.Dispose()
+    End Sub
 End Class
+
+''Mainly a guesstimate based on some testing in making it look right.
+''Due the form having borders, that are included in the Size property,
+''simply setting them to 640 and 480 does not work, as the actual
+''window would be too small. the width looked right when I added 16
+''to 640, thus I deduced this property.
+'Private ReadOnly Property FormborderWidth As Integer = 8
+''Same as for FormBordereWidth, it looked right i added 39 to 480
+''so I subtracted 8 and made this property
+'Private ReadOnly Property FormTopBarWidth As Integer = 31
+
+'Me.SetSize()
+'''' <summary>
+'''' For some unknown reason, setting the size in the designer did not
+'''' yield the right result so I was forced to set the size again
+'''' programtically.
+'''' </summary>
+'Private Sub SetSize()
+'    Me.Height = ProjectConstants.ContentHeight + FormTopBarWidth + FormborderWidth
+'    Me.Width = ProjectConstants.ContentWidth + 2 * FormborderWidth
+'    Me.Panel1.Height = ProjectConstants.ContentHeight
+'    Me.Panel1.Width = ProjectConstants.ContentWidth
+'End Sub

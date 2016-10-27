@@ -20,4 +20,13 @@
         Me.Floor5RoomA = Nothing
         Me.Floor6RoomA = Nothing
     End Sub
+
+    Friend Sub Dispose()
+        Me.Floor1RoomA.Dispose()
+        'Me.Floor2RoomA.Dispose()
+        'Me.Floor3RoomA.Dispose()
+        'Me.Floor4RoomA.Dispose()
+        'Me.Floor5RoomA.Dispose()
+        'Me.Floor6RoomA.Dispose()
+    End Sub
 End Class

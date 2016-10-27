@@ -19,7 +19,7 @@ Public Class IntroFrame
         Me.BackColor = ColorTranslator.FromHtml(My.Resources.BackColor)
         Me.ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
         Me.Label1.Text =
-            "Hei jeg er dronning Chillary Klinton! Jeg trenger din hjelp!" & Environment.NewLine &
+            "Hei, jeg er dronning Chillary Klinton, jeg trenger din hjelp." & Environment.NewLine &
             "Hva heter du?”
     End Sub
 
