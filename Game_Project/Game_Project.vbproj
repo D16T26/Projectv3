@@ -100,6 +100,36 @@
     <Compile Include="Frames\Rooms\F1RA.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Frames\Rooms\F2RA.Designer.vb">
+      <DependentUpon>F2RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\F2RA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\Rooms\F3RA.Designer.vb">
+      <DependentUpon>F3RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\F3RA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\Rooms\F4RA.Designer.vb">
+      <DependentUpon>F4RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\F4RA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\Rooms\F5RA.Designer.vb">
+      <DependentUpon>F5RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\F5RA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\Rooms\F6RA.Designer.vb">
+      <DependentUpon>F6RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Rooms\F6RA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Frames\Rooms\Room.Designer.vb">
       <DependentUpon>Room.vb</DependentUpon>
     </Compile>

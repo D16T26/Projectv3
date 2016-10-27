@@ -1,4 +1,5 @@
-﻿''' <summary>
+﻿Imports System.Text.RegularExpressions
+''' <summary>
 ''' This is, as you can see, the frame handling the intro sequence.
 ''' it starts of with the queen introducing herself while askign the
 ''' player for his/her name. When the player has selected their name
@@ -33,7 +34,7 @@ Public Class IntroFrame
 
     Private Sub NameTextBox_Keydown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Owner.playerName = TextBox1.Text
+            Owner.playerName = Regex.Replace(TextBox1.Text, "\s{2,}", " ").Trim 'Strip superfluous whitespace from the user input. never trust users.
             TextBox1.Hide()
             StartGameButton.Show()
             StartGameButton.Select()
