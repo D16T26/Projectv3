@@ -16,20 +16,54 @@
             .BackColor = Color.Transparent
             .ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
             .Font = New Font(FontFamily.GenericMonospace, 10)
-            .Label1.Text = "Movement"
-            .Label2.Text = "W - Move up"
-            .Label3.Text = "A - Move West"
-            .Label4.Text = "S - Move Down"
-            .Label5.Text = "D - Move East"
             .Width = ProjectConstants.ContentWidth
             .Height = ProjectConstants.ContentHeight
+
+            .Label1.Text = "Movement"
+            .Label2.Text = "I - Move up"
+            .Label3.Text = "J - Move West"
+            .Label4.Text = "K - Move Down"
+            .Label5.Text = "L - Move East"
 
             With .Panel1
                 .Location = New Point(180, 240)
                 .Height = 240
                 .Width = 460
             End With
+
+            With .HexKeyPanel
+                .ForeColor = Color.Black
+                .Hide()
+            End With
+
+            With .NavButton1
+                .SouthNav = NavButton3
+                .EastNav = NavButton2
+                .Hide()
+            End With
+
+            With .NavButton2
+                .WestNav = NavButton1
+                .SouthNav = NavButton4
+                .Hide()
+            End With
+
+            With .NavButton3
+                .NorthNav = NavButton1
+                .EastNav = NavButton4
+                .Hide()
+            End With
+
+            With .NavButton4
+                .NorthNav = NavButton2
+                .WestNav = NavButton3
+                .Hide()
+            End With
         End With
+    End Sub
+
+    Private Sub HexKeyPadInput_Click(sender As Button, e As EventArgs)
+
     End Sub
 
     Private Sub Room_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
