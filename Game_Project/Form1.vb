@@ -19,34 +19,27 @@ Public Class Form1
         Me.ContentPanel.Controls.Add(projectConstants.Floor1RoomA) 'TODO, change back to INTRO
     End Sub
 
-    ''' <summary>
-    ''' IntroFrame is not a subclass of Room, thus I cant use changeroom to hax
-    ''' this one, shame.
-    ''' </summary>
     Friend Sub GoToIntro()
         With Me.ContentPanel.Controls
             .Clear()
-            .Add(New IntroFrame(Me))
+            .Add(projectConstants.introFrame)
         End With
     End Sub
 
     Friend Sub StartGame()
-        Me.ChangeRoom(projectConstants.Floor1RoomA)
+        With Me.ContentPanel.Controls
+            .Clear()
+            .Add(projectConstants.Floor1RoomA)
+        End With
     End Sub
 
-    ''' <summary>
-    ''' Changes the currently displayed room. the previous room is
-    ''' is simply cleared from the contentPanel. it is sitll stored in
-    ''' projectConstants... Which I will need a better name for now that
-    ''' it does more...
-    ''' 
-    ''' point is. it is stored there, so the state is saved.
-    ''' another option in this area would be to store the state some other way
-    ''' and dispose them everytime, but with a program as small as this. I am
-    ''' not entirely sure that it would be worth the effort.
-    ''' </summary>
-    ''' <param name="newRoom">The new room that will be shown.</param>
-    Friend Sub ChangeRoom(newRoom As Room)
+    Friend Sub ChangeRoom(oldRoom As Room, direction As Direction)
+        Dim newRoom As Room = Nothing
+
+        If oldRoom.GetType Is GetType(F1RA) Then
+            newRoom = projectConstants.Floor2RoomA
+        End If
+
         With Me.ContentPanel.Controls
             .Clear()
             .Add(newRoom)
