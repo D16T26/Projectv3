@@ -1,9 +1,11 @@
 ﻿Public Class F6RA
-    Public Retning As String = "Venstre"
+    Public synlig As Boolean = True
     Public teller As Integer = 0
 
     Public Sub New(Owner As Form1)
         MyBase.New(Owner)
+        Label6.Text = ""
+        DialogueButton.Hide()
         InitializeComponent()
         Timer1.Enabled = True
         Timer1.Interval = 700
@@ -24,20 +26,14 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer3.Enabled = False
-        Select Case Retning
-            Case "Venstre"
-                picFly.Left = Rnd() * (-500)
-                picFly.Top = Rnd() * (-500)
-                If picFly.Left <= 0 Then
-                    Retning = "Høyre"
-                End If
-            Case "Høyre"
-                picFly.Left = Rnd() * 500
-                picFly.Top = Rnd() * 500
-                If picFly.Left >= 300 Then
-                    Retning = "Venstre"
-                End If
-        End Select
+        If synlig Then
+            picFly.Left = 180 + Rnd() * (ProjectConstants.ContentWidth - 180 - picFly.Width)
+            picFly.Top = Rnd() * (ProjectConstants.ContentHeight - picFly.Height)
+            picFly.Show()
+        Else
+            picFly.Hide()
+        End If
+        synlig = Not synlig
     End Sub
 
     Private Sub picFly_Click(sender As Object, e As EventArgs) Handles picFly.Click
