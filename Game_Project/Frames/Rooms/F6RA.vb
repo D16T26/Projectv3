@@ -4,19 +4,24 @@
 
     Public Sub New(Owner As Form1)
         MyBase.New(Owner)
-        Label6.Text = ""
-        DialogueButton.Hide()
+        Label6.Text = "Some text"
         InitializeComponent()
+    End Sub
+
+    Private Sub startFight()
+        DialogueButton.Hide()
+        Label6.Text = ""
+
         Timer1.Enabled = True
-        Timer1.Interval = 700
         Timer2.Enabled = False
-        Timer2.Interval = 50
         Timer3.Enabled = False
-        Timer3.Interval = 3000
         Timer4.Enabled = False
+
+        Timer1.Interval = 700
+        Timer2.Interval = 50
+        Timer3.Interval = 3000
         Timer4.Interval = 50
 
-        Me.BackColor = Color.White
         pic1.Visible = False
         pic2.Visible = False
         pic3.Visible = False
@@ -24,16 +29,8 @@
         picFly.Image = pic1.Image
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Timer3.Enabled = False
-        If synlig Then
-            picFly.Left = 180 + Rnd() * (ProjectConstants.ContentWidth - 180 - picFly.Width)
-            picFly.Top = Rnd() * (ProjectConstants.ContentHeight - picFly.Height)
-            picFly.Show()
-        Else
-            picFly.Hide()
-        End If
-        synlig = Not synlig
+    Private Sub DialogueClick(sender As Button, e As EventArgs) Handles DialogueButton.Click
+        startFight()
     End Sub
 
     Private Sub picFly_Click(sender As Object, e As EventArgs) Handles picFly.Click
@@ -43,6 +40,18 @@
         If teller = 3 Then
             Timer4.Enabled = True
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer3.Enabled = False
+        If Not synlig Then
+            picFly.Left = 180 + Rnd() * (ProjectConstants.ContentWidth - 180 - picFly.Width)
+            picFly.Top = Rnd() * (ProjectConstants.ContentHeight - picFly.Height)
+            picFly.Show()
+        Else
+            picFly.Hide()
+        End If
+        synlig = Not synlig
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick

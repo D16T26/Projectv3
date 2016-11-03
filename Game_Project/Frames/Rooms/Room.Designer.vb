@@ -396,6 +396,7 @@ Partial Class Room
         '
         'pic1
         '
+        Me.pic1.BackColor = System.Drawing.Color.Transparent
         Me.pic1.Cursor = System.Windows.Forms.Cursors.Default
         Me.pic1.Image = Global.Game_Project.My.Resources.Resources.pic1
         Me.pic1.Location = New System.Drawing.Point(187, 17)
@@ -408,6 +409,7 @@ Partial Class Room
         '
         'pic2
         '
+        Me.pic2.BackColor = System.Drawing.Color.Transparent
         Me.pic2.Image = Global.Game_Project.My.Resources.Resources.pic2
         Me.pic2.Location = New System.Drawing.Point(187, 120)
         Me.pic2.Name = "pic2"
@@ -419,6 +421,7 @@ Partial Class Room
         '
         'pic3
         '
+        Me.pic3.BackColor = System.Drawing.Color.Transparent
         Me.pic3.Image = Global.Game_Project.My.Resources.Resources.pic3
         Me.pic3.Location = New System.Drawing.Point(542, 14)
         Me.pic3.Name = "pic3"
@@ -430,6 +433,7 @@ Partial Class Room
         '
         'picFly
         '
+        Me.picFly.BackColor = System.Drawing.Color.Transparent
         Me.picFly.Location = New System.Drawing.Point(542, 126)
         Me.picFly.Name = "picFly"
         Me.picFly.Size = New System.Drawing.Size(75, 75)
