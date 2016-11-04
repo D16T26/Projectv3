@@ -1,2 +1,2 @@
-# NTNU, Drift av datasystemer, 2016 - Spill prosjekt
+# NTNU, D16T26 - Dungeons and a Dragon
 ## Introduksjon
