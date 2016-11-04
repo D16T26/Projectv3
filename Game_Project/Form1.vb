@@ -36,7 +36,7 @@ Public Class Form1
     Friend Sub ChangeRoom(oldRoom As Room, direction As Direction)
         Dim newRoom As Room = Nothing
 
-        If oldRoom.GetType Is GetType(F1RA) Then
+        If oldRoom.GetType Is GetType(F5RA) Then
             newRoom = projectConstants.Floor2RoomA
         End If
 
