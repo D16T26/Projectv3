@@ -22,6 +22,7 @@
 
     Private Sub StartRiddle()
         With Me
+            .DialogueButton.Hide()
             .Label6.Text = """Hvis du ser rett på en regnbue, hvor er sola da?" & Environment.NewLine
             .DialogueButton.Hide()
             With .NavButton1

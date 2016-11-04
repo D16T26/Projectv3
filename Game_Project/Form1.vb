@@ -16,7 +16,7 @@ Public Class Form1
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(projectConstants.Floor6RoomA) 'TODO, change back to INTRO
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu) 'TODO, change back to INTRO
     End Sub
 
     Friend Sub GoToIntro()
@@ -36,8 +36,19 @@ Public Class Form1
     Friend Sub ChangeRoom(oldRoom As Room, direction As Direction)
         Dim newRoom As Room = Nothing
 
-        If oldRoom.GetType Is GetType(F1RA) Then
-            newRoom = projectConstants.Floor2RoomA
+        If direction = Direction.Up Then
+            Select Case oldRoom.GetType
+                Case GetType(F1RA)
+                    newRoom = projectConstants.Floor2RoomA
+                Case GetType(F2RA)
+                    newRoom = projectConstants.Floor3RoomA
+                Case GetType(F3RA)
+                    newRoom = projectConstants.Floor4RoomA
+                Case GetType(F4RA)
+                    newRoom = projectConstants.Floor5RoomA
+                Case GetType(F5RA)
+                    newRoom = projectConstants.Floor6RoomA
+            End Select
         End If
 
         With Me.ContentPanel.Controls

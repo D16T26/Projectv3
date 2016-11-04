@@ -23,6 +23,7 @@
 
     Private Sub StartRiddle()
         With Me
+            .DialogueButton.Hide()
             .Label6.Text = """Mr. Frump har fire døtre, hver datter har en bror." & Environment.NewLine &
                              "Hvor mange unger har Mr. Frump?"""
             With .NavButton1

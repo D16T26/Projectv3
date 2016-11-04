@@ -26,6 +26,7 @@
     End Sub
 
     Private Sub StartRiddle()
+        DialogueButton.Hide()
         HexKeyPanel.Show()
         Label6.Text = "Du ser det står gravert inn noen tall under" & Environment.NewLine &
         "glassvinduet, kan dette ha noe med koden for" & Environment.NewLine &
