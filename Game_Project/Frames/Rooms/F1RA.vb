@@ -23,7 +23,6 @@
 
     Private Sub StartRiddle()
         With Me
-            .HexKeyPanel.Show()
             .Label6.Text = """Mr. Frump har fire døtre, hver datter har en bror." & Environment.NewLine &
                              "Hvor mange unger har Mr. Frump?"""
             With .NavButton1
