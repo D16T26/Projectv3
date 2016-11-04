@@ -16,7 +16,7 @@ Public Class Form1
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(projectConstants.Floor6RoomA) 'TODO, change back to INTRO
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu) 'TODO, change back to INTRO
     End Sub
 
     Friend Sub GoToIntro()
