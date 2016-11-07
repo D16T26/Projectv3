@@ -60,7 +60,7 @@
         Dim text As String =
             "The epitome of punishments. Forcing a fellow human" & Environment.NewLine &
             "being to suffer the existence pop-up messages!!"
-        Dim title As String = "L2Math mate"
+        Dim title As String = "L2Refraction/Reflection/Dispersion mate"
         Dim style As MsgBoxStyle = MsgBoxStyle.Critical
         MsgBox(text, style, title)
     End Sub
