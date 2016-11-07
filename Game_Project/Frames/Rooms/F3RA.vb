@@ -1,4 +1,22 @@
-﻿Public Class F3RA
+﻿''' <summary>
+''' In this room our hero meets the last man a man will ever want to meet.
+''' well, it holds true for some men at least.
+''' It also seems to make the assumption that our trusty hero is a man.
+''' And here is spent all this time speaking in relatively gender neutral terms.
+''' sigh. Oh well.
+''' 
+''' Our hero needs to answer the mans riddle unless he wants to be the mans
+''' plaything for an hour.
+''' 
+''' Riddle:
+'''     What can you Catch, but don't throw?
+'''     Answers:
+'''         Correct: Chlamydia
+'''         Wrong: Gold
+'''         Wrong: A ball with superglue
+'''         Wrong: A falling angel
+''' </summary>
+Public Class F3RA
     Public ReadOnly Property author As String = "Odd Egil Korsnes"
     Public Sub New(Owner As Form1)
         MyBase.New(Owner)

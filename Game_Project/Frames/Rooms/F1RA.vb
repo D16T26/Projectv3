@@ -1,4 +1,19 @@
-﻿Public Class F1RA
+﻿''' <summary>
+''' Our hero has arrived at the tower. there is a doorguard however.
+''' the guard requires a riddle to be answered before you can pass through.
+''' 
+''' Mr. Frump appears to have very lax security.
+''' 
+''' Riddle:
+'''     Mr. Frump har fire døtre, hver datter har en bror.
+'''     Hvor mange unger har Mr. Frump?
+'''     Answers:
+'''         Correct: 5
+'''         Wrong: 9
+'''         Wrong: 6
+'''         Wrong: 4
+''' </summary>
+Public Class F1RA
     Public ReadOnly Property author As String = "Sondre Grøneng"
 
     ''' <summary>

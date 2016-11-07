@@ -1,4 +1,19 @@
-﻿Public Class F2RA
+﻿''' <summary>
+''' This is one of two relatively unique rooms in the tower.
+''' the other one is slightly more unique, but who keeps count.
+''' 
+''' In this room our trusty hero meets his worst nightmare, three doggies.
+''' He finds some bacon locked behind a glass window. what? Who you don't
+''' randomly lock bacon behind glass windows?
+''' 
+''' Our hero needs to figure out hte code to open the glass window to get the
+''' bacon to distract those pesky dogs.
+''' 
+''' Riddle:
+'''     What is the hexadecimal value of: 1101 0101 0100 1110
+'''     Answer: D54E
+''' </summary>
+Public Class F2RA
     Public ReadOnly Property author As String = "Ole Jørgen Valla Dønnem"
 
     Public Sub New(owner As Form1)
@@ -39,7 +54,7 @@
     End Sub
 
     ''' <summary>
-    ''' Starts u pthe riddle by hiding the dialogue button, showing the hexkeypanel, as the riddle
+    ''' Starts up the riddle by hiding the dialogue button, showing the hexkeypanel, as the riddle
     ''' in this particular room calls for a different type of interface than room 1 and 3 though 4.
     ''' display text is also set to the appropriate text for informing the user what buttons best
     ''' to click.

@@ -1,4 +1,16 @@
-﻿Public Class F4RA
+﻿''' <summary>
+''' In this room our hero meets another guard. the guard requires
+''' the hero to answer a riddle to let him pass.
+''' 
+''' Riddle:
+'''     Hvis du ser rett på en regnbue, hvor er sola da?
+'''     Answers:
+'''         Correct: Bak deg
+'''         Wrong: Foran deg
+'''         Wrong: Til høyre
+'''         Wrong: Til venstre
+''' </summary>
+Public Class F4RA
     Public ReadOnly Property author As String = "Audun Flage"
 
     Public Sub New(owner As Form1)
