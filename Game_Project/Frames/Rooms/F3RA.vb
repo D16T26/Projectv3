@@ -7,7 +7,7 @@
     End Sub
 
     ''' <summary>
-    ''' Initialises local data for the room. initial dialogue text and setting
+    ''' Initialises local data for the room. Dialogue text and setting
     ''' the answers to the buttons
     ''' </summary>
     Private Sub Initialize()
