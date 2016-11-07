@@ -57,6 +57,12 @@
         End With
     End Sub
 
+    ''' <summary>
+    ''' This procedure is called when nay of the navbuttons holding the
+    ''' wrong answer to the riddle is called. as of now it simply throws
+    ''' up a popup message. though, to be fair, I dont think you could get
+    ''' a more sinister punishment than a popup message
+    ''' </summary>
     Private Sub WrongAnswer_Click(sender As NavButton, e As EventArgs) Handles _
             NavButton1.Click, NavButton2.Click, NavButton4.Click
         Dim text As String =
@@ -68,6 +74,11 @@
         MsgBox(text, style, title)
     End Sub
 
+    ''' <summary>
+    ''' This procedure is called when the navbutton holding the correct answer to the
+    ''' riddle is clicked. it hides the buttons in question, marks the riddle as complete
+    ''' and changes the display text to a message indicating that the player can procede.
+    ''' </summary>
     Private Sub CorrectAnswer_Click(sender As NavButton, e As EventArgs) Handles NavButton3.Click
         With Me
             .riddleWon = True

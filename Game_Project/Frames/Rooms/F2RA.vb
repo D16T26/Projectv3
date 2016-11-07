@@ -1,55 +1,79 @@
 ﻿Public Class F2RA
     Public ReadOnly Property author As String = "Ole Jørgen Valla Dønnem"
+
     Public Sub New(owner As Form1)
         MyBase.New(owner)
-        InitializeComponent()
-        Label6.Text = "Du stopper i toppen av trappen til andre etasje og ser" & Environment.NewLine &
-                        "ditt værste mareritt, tre rabide hunder. Dette må være" & Environment.NewLine &
-                        "Frumps berømte chihuahua trio og du er dødelig redd for" & Environment.NewLine &
-                        "hunder." & Environment.NewLine &
-                        " " & Environment.NewLine &
-                        "Men til høyre for deg ser du tre remser bacon" & Environment.NewLine &
-                        "låst bak ett glassvindu. Finn kombinasjonen," & Environment.NewLine &
-                        "få tak i baconet og distraher hundene lenge" & Environment.NewLine &
-                        "nok til å snike deg forbi dem"
-
+        InitializeComponent() 'without this, everything breaks
+        Me.initialize()
     End Sub
 
+    ''' <summary>
+    ''' Initializes the data for the room. here it simply sets the displaytext to
+    ''' the first part of the dialogue.
+    ''' </summary>
+    Private Sub initialize()
+        Label6.Text =
+            "Du stopper i toppen av trappen til andre etasje og ser" & Environment.NewLine &
+            "ditt værste mareritt, tre rabide hunder. Dette må være" & Environment.NewLine &
+            "Frumps berømte chihuahua trio og du er dødelig redd for" & Environment.NewLine &
+            "hunder."
+    End Sub
+
+    ''' <summary>
+    ''' This procedure is called when the dialogue button is clicked. due to dialogue here
+    ''' naturally being split in two, it is done as such a way as to make the first click
+    ''' simply continue the dialouge, while the second click will start the riddle.
+    ''' </summary>
     Private Sub Button1_Click1(sender As Button, e As EventArgs) Handles DialogueButton.Click
-        If Not riddleWon Then
+        Static c As Boolean = False
+        If Not c Then
+            c = True
+            Label6.Text =
+                "Til høyre for deg ser du tre remser bacon" & Environment.NewLine &
+                "låst bak ett glassvindu. Finn kombinasjonen," & Environment.NewLine &
+                "få tak i baconet og distraher hundene lenge" & Environment.NewLine &
+                "nok til å snike deg forbi dem"
+        Else
             StartRiddle()
         End If
     End Sub
 
+    ''' <summary>
+    ''' Starts u pthe riddle by hiding the dialogue button, showing the hexkeypanel, as the riddle
+    ''' in this particular room calls for a different type of interface than room 1 and 3 though 4.
+    ''' display text is also set to the appropriate text for informing the user what buttons best
+    ''' to click.
+    ''' </summary>
     Private Sub StartRiddle()
         DialogueButton.Hide()
         HexKeyPanel.Show()
-        Label6.Text = "Du ser det står gravert inn noen tall under" & Environment.NewLine &
-        "glassvinduet, kan dette ha noe med koden for" & Environment.NewLine &
-        "å åpne vinduet?" & Environment.NewLine &
-        " " & Environment.NewLine &
-        "1101 0101 0100 1110"
-
+        Label6.Text =
+            "Du ser det står gravert inn noen tall under" & Environment.NewLine &
+            "glassvinduet, kan dette ha noe med koden for" & Environment.NewLine &
+            "å åpne vinduet?" & Environment.NewLine & Environment.NewLine &
+            "1101 0101 0100 1110"
     End Sub
 
+    ''' <summary>
+    ''' Is called when the submit button on the hexkeypanel is clicked (aptly named "S")
+    ''' if the code on the display is correct. the panel is hidden, the riddle is set to won
+    ''' and the display text is set to an appropriate congratulatory message.
+    ''' 
+    ''' otherwise, the user is thrown into the abyss known as popup messages.
+    ''' </summary>
     Private Sub BSubmit_Click(sender As Object, e As EventArgs) Handles BSubmit.Click
-        ' Validere riktig svar på gåte
-
         If TextBox1.Text = "D54E" Then
             riddleWon = True
+            HexKeyPanel.Hide()
+            Label6.Text =
+                "Riktig kode!" & Environment.NewLine &
+                "Du fikk tak i baconet, distrahert hundene" & Environment.NewLine &
+                "og du kan nå gå videre til neste etasje.."
         Else
             Dim text As String = "Feil kode, prøv igjen!"
             Dim title As String = "Feil!"
             Dim style As MsgBoxStyle = MsgBoxStyle.Critical
-
             MsgBox(text, style, title)
-        End If
-
-        If riddleWon = True Then
-            HexKeyPanel.Hide()
-            Label6.Text = "Riktig kode!" & Environment.NewLine &
-            "Du fikk tak i baconet, distrahert hundene" & Environment.NewLine &
-            "og du kan nå gå videre til neste etasje.."
         End If
     End Sub
 End Class
