@@ -49,11 +49,11 @@
         Me.Label6.Text =
                 """Mr. Frump har fire døtre, hver datter har en bror." & Environment.NewLine &
                 "Hvor mange unger har Mr. Frump?"""
+
         Me.NavButton1.Show()
         Me.NavButton2.Show()
         Me.NavButton3.Show()
         Me.NavButton4.Show()
-
         Me.NavButton1.Focus()
     End Sub
 
