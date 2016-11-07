@@ -47,33 +47,3 @@ Public Class IntroFrame
         End If
     End Sub
 End Class
-
-'From a time back when, for some reason, size didn't work properly
-'unless i wrote it in code.
-'that SHOULD be fixed...
-
-'Private Sub SetUpNavButton1()
-'    With Me.NavButton1
-'        .Location = New Point(0, ProjectConstants.ContentHeight - (.Height + 50))
-'        .Width = ProjectConstants.ContentWidth
-'        .TextAlign = ContentAlignment.TopLeft
-
-'        .Hide()
-'    End With
-'End Sub
-
-'Private Sub SetUpLabel1()
-'    With Me.Label1
-'        .ForeColor = ColorTranslator.FromHtml(My.Resources.ForeColor)
-'        .Location = New Point(.Location.X + 20, .Location.Y)
-'        .Text =
-'            "Hei jeg er dronning Chillary Klinton! Jeg trenger din hjelp!" & Environment.NewLine &
-'            "Hva heter du?”
-'    End With
-'End Sub
-
-'Me.Width = ProjectConstants.ContentWidth
-'Me.Height = ProjectConstants.ContentHeight
-'Me.Font = New Font(FontFamily.GenericMonospace, 10)
-
-'NavButton1.Text = " - Press ENTER/SPACE to continue"
