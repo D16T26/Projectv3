@@ -1,6 +1,5 @@
 ﻿Public Class F5RA
     Public ReadOnly Property author As String = "Espen Skjelbreid"
-    Private Property riddleWon As Boolean = False
     Private Property counter As Integer = 0
 
     Public Sub New(owner As Form1)
@@ -81,16 +80,5 @@
                            "Gjør oss en tjeneste og ikke slipp noen forbi!""" & Environment.NewLine &
                            "Vaktene forsvinner ned trappen og du kan nå gå videre!"
         End With
-    End Sub
-
-    Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
-        Select Case e.KeyCode
-            Case Keys.I
-                If riddleWon Then
-                    Owner.ChangeRoom(Me, Direction.Up)
-                End If
-            Case Keys.J
-
-        End Select
     End Sub
 End Class

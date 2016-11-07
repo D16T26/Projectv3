@@ -4,6 +4,7 @@
 ''' </summary>
 Public Class Room
     Protected ReadOnly Property Owner As Form1
+    Protected Property riddleWon As Boolean = False
 
     Public Sub New(Owner As Form1)
         InitializeComponent()
@@ -18,10 +19,8 @@ Public Class Room
     ''' Writes to the keypad textbox, but limits it to 4 characters.
     ''' </summary>
     Private Sub HexKeyPadInput_Click(sender As Button, e As EventArgs) Handles _
-        B0.Click, B1.Click, B2.Click, B3.Click,
-        B4.Click, B5.Click, B6.Click, B7.Click,
-        B8.Click, B9.Click, BA.Click, BB.Click,
-        BC.Click, BD.Click, BE.Click, BF.Click
+        B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click, B6.Click, B7.Click,
+        B8.Click, B9.Click, BA.Click, BB.Click, BC.Click, BD.Click, BE.Click, BF.Click
 
         If TextBox1.TextLength < 4 Then
             TextBox1.Text &= sender.Text
@@ -58,5 +57,15 @@ Public Class Room
 
     Private Sub Room_Load(sender As Object, e As EventArgs) Handles Me.Load
         DialogueButton.Focus()
+    End Sub
+
+    Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
+        Select Case e.KeyCode
+            Case Keys.I
+                If riddleWon Then
+                    Owner.ChangeRoom(Me, Direction.Up)
+                End If
+            Case Keys.J
+        End Select
     End Sub
 End Class

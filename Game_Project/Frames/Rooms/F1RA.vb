@@ -1,6 +1,6 @@
 ﻿Public Class F1RA
     Public ReadOnly Property author As String = "Sondre Grøneng"
-    Private Property riddleWon As Boolean = False
+    'Private Property riddleWon As Boolean = False
 
     Public Sub New(Owner As Form1)
         MyBase.New(Owner)
@@ -66,14 +66,5 @@
             .NavButton4.Hide()
             .Label6.Text = "Er vel bare å fortsette videre..."
         End With
-    End Sub
-
-    Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
-        Select Case e.KeyCode
-            Case Keys.I
-                If riddleWon Then
-                    Owner.ChangeRoom(Me, Direction.Up)
-                End If
-        End Select
     End Sub
 End Class

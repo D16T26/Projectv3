@@ -1,4 +1,5 @@
 ﻿Public Class F6RA
+    Public ReadOnly Property author As String = "Cathinka Pedersen"
     Public synlig As Boolean = True
     Public teller As Integer = 0
 

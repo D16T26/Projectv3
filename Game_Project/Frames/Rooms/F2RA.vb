@@ -1,12 +1,8 @@
 ﻿Public Class F2RA
-
-    Private Property riddleWon As Boolean = False
+    Public ReadOnly Property author As String = "Ole Jørgen Valla Dønnem"
     Public Sub New(owner As Form1)
         MyBase.New(owner)
-        ' This call is required by the designer.
         InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-
         Label6.Text = "Du stopper i toppen av trappen til andre etasje og ser" & Environment.NewLine &
                         "ditt værste mareritt, tre rabide hunder. Dette må være" & Environment.NewLine &
                         "Frumps berømte chihuahua trio og du er dødelig redd for" & Environment.NewLine &
@@ -55,14 +51,5 @@
             "Du fikk tak i baconet, distrahert hundene" & Environment.NewLine &
             "og du kan nå gå videre til neste etasje.."
         End If
-    End Sub
-
-    Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
-        Select Case e.KeyCode
-            Case Keys.I
-                If riddleWon Then
-                    Owner.ChangeRoom(Me, Direction.Up)
-                End If
-        End Select
     End Sub
 End Class

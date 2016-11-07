@@ -1,6 +1,5 @@
 ﻿Public Class F4RA
     Public ReadOnly Property author As String = "Audun Flage"
-    Private Property riddleWon As Boolean = False
     Public Sub New(owner As Form1)
         MyBase.New(owner)
         InitializeComponent()
@@ -65,14 +64,5 @@
             .NavButton4.Hide()
             .Label6.Text = "Er vel bare å fortsette videre..."
         End With
-    End Sub
-
-    Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
-        Select Case e.KeyCode
-            Case Keys.I
-                If riddleWon Then
-                    Owner.ChangeRoom(Me, Direction.Up)
-                End If
-        End Select
     End Sub
 End Class
