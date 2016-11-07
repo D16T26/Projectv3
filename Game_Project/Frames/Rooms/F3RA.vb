@@ -6,9 +6,13 @@
         Me.Initialize()
     End Sub
 
+    ''' <summary>
+    ''' Initialises local data for the room. initial dialogue text and setting
+    ''' the answers to the buttons
+    ''' </summary>
     Private Sub Initialize()
         Me.Label6.Text =
-            "Midt i denne etasjen ser du Pike Mense," & Environment.NewLine &
+            "Midt i denne etasjen ser du at Pike Mense," & Environment.NewLine &
             "bestekompisen til Frump, står halvnaken og ser på deg" & Environment.NewLine &
             "med lystfylte øyne. Han er tydeligvis veldig glad i " & Environment.NewLine &
             "menn, men du spiller ikke helt på det laget." & Environment.NewLine &
@@ -22,11 +26,15 @@
         Me.NavButton4.Text = "A falling angel"
     End Sub
 
-
+    ''' <summary>
+    ''' This handles dialogue procession. In this particular room there is no extra
+    ''' dialogue before the riddle so it simply initialises the riddle.
+    ''' it used to check for whether or not the riddle had been completed.
+    ''' the check was removed due to the fact that the button is hidden completely
+    ''' once the riddle starts and never shows up again.
+    ''' </summary>
     Private Sub Button1_Click1(sender As Button, e As EventArgs) Handles DialogueButton.Click
-        If Not riddleWon Then
-            Me.StartRiddle()
-        End If
+        Me.StartRiddle()
     End Sub
 
     ''' <summary>
