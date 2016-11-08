@@ -5,8 +5,14 @@
 
     Public Sub New(Owner As Form1)
         MyBase.New(Owner)
-        displayTextLabel.Text = "Some text"
         InitializeComponent()
+        Me.initialize()
+    End Sub
+
+    Private Sub initialize()
+        displayTextLabel.Text = "Some text"
+        Label11.Show()
+        Label12.Show()
     End Sub
 
     Private Sub startFight()
@@ -23,9 +29,6 @@
         Timer3.Interval = 3000
         Timer4.Interval = 50
 
-        pic1.Visible = False
-        pic2.Visible = False
-        pic3.Visible = False
         picFly.Visible = True
         picFly.Image = pic1.Image
     End Sub
