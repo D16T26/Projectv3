@@ -25,12 +25,10 @@ Partial Class Room
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DialogueButton = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.displayTextLabel = New System.Windows.Forms.Label()
         Me.HexKeyPanel = New System.Windows.Forms.Panel()
         Me.BSubmit = New System.Windows.Forms.Button()
         Me.BReset = New System.Windows.Forms.Button()
@@ -60,6 +58,7 @@ Partial Class Room
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.NavButton2 = New Game_Project.NavButton()
         Me.NavButton4 = New Game_Project.NavButton()
         Me.NavButton3 = New Game_Project.NavButton()
@@ -92,40 +91,18 @@ Partial Class Room
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(119, 20)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "I - Move up"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(32, 48)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(139, 20)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "J - Move west"
+        Me.Label2.Text = "E - Move up"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(32, 69)
+        Me.Label4.Location = New System.Drawing.Point(32, 46)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(139, 20)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "K - Move down"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(32, 90)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(139, 20)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "L - Move East"
+        Me.Label4.Text = "Q - Move down"
         '
         'Panel1
         '
@@ -134,7 +111,7 @@ Partial Class Room
         Me.Panel1.Controls.Add(Me.NavButton2)
         Me.Panel1.Controls.Add(Me.NavButton4)
         Me.Panel1.Controls.Add(Me.NavButton1)
-        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.displayTextLabel)
         Me.Panel1.Controls.Add(Me.NavButton3)
         Me.Panel1.Location = New System.Drawing.Point(180, 240)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
@@ -151,15 +128,15 @@ Partial Class Room
         Me.DialogueButton.TabIndex = 6
         Me.DialogueButton.UseVisualStyleBackColor = True
         '
-        'Label6
+        'displayTextLabel
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 12)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(12)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 20)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Label6"
+        Me.displayTextLabel.AutoSize = True
+        Me.displayTextLabel.Location = New System.Drawing.Point(12, 12)
+        Me.displayTextLabel.Margin = New System.Windows.Forms.Padding(12)
+        Me.displayTextLabel.Name = "displayTextLabel"
+        Me.displayTextLabel.Size = New System.Drawing.Size(69, 20)
+        Me.displayTextLabel.TabIndex = 0
+        Me.displayTextLabel.Text = "Label6"
         '
         'HexKeyPanel
         '
@@ -442,6 +419,15 @@ Partial Class Room
         Me.picFly.TabStop = False
         Me.picFly.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(5, 72)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(69, 20)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Label3"
+        '
         'NavButton2
         '
         Me.NavButton2.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -529,6 +515,7 @@ Partial Class Room
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.picFly)
         Me.Controls.Add(Me.pic3)
         Me.Controls.Add(Me.pic2)
@@ -536,9 +523,7 @@ Partial Class Room
         Me.Controls.Add(Me.KeyDownAssist)
         Me.Controls.Add(Me.HexKeyPanel)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -560,11 +545,9 @@ Partial Class Room
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label6 As Label
+    Friend WithEvents displayTextLabel As Label
     Friend WithEvents NavButton2 As NavButton
     Friend WithEvents NavButton4 As NavButton
     Friend WithEvents NavButton1 As NavButton
@@ -599,4 +582,5 @@ Partial Class Room
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Timer3 As Timer
     Friend WithEvents Timer4 As Timer
+    Friend WithEvents Label3 As Label
 End Class

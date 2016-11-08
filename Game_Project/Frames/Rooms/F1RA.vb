@@ -32,7 +32,7 @@ Public Class F1RA
     ''' the answers to the buttons
     ''' </summary>
     Private Sub Initialize()
-        Me.Label6.Text =
+        Me.displayTextLabel.Text =
             “Du ser inngangen til tårnet men det står en dørvakt" & Environment.NewLine &
             "i veien, han krever du løser en gåte for å komme" & Environment.NewLine &
             "forbi.”
@@ -61,7 +61,7 @@ Public Class F1RA
     ''' </summary>
     Private Sub StartRiddle()
         Me.DialogueButton.Hide()
-        Me.Label6.Text =
+        Me.displayTextLabel.Text =
                 """Mr. Frump har fire døtre, hver datter har en bror." & Environment.NewLine &
                 "Hvor mange unger har Mr. Frump?"""
 
@@ -100,6 +100,6 @@ Public Class F1RA
         Me.NavButton2.Hide()
         Me.NavButton3.Hide()
         Me.NavButton4.Hide()
-        Me.Label6.Text = "Er vel bare å fortsette videre..."
+        Me.displayTextLabel.Text = "Er vel bare å fortsette videre..."
     End Sub
 End Class

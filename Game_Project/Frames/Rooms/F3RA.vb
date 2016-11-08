@@ -29,7 +29,7 @@ Public Class F3RA
     ''' the answers to the buttons
     ''' </summary>
     Private Sub Initialize()
-        Me.Label6.Text =
+        Me.displayTextLabel.Text =
             "Midt i denne etasjen ser du at Pike Mense," & Environment.NewLine &
             "bestekompisen til Frump, står halvnaken og ser på deg" & Environment.NewLine &
             "med lystfylte øyne. Han er tydeligvis veldig glad i " & Environment.NewLine &
@@ -62,7 +62,7 @@ Public Class F3RA
     ''' </summary>
     Private Sub StartRiddle()
         Me.DialogueButton.Hide()
-        Me.Label6.Text = """What can you Catch, but don't throw?"""
+        Me.displayTextLabel.Text = """What can you Catch, but don't throw?"""
 
         Me.NavButton1.Show()
         Me.NavButton2.Show()
@@ -97,6 +97,6 @@ Public Class F3RA
         Me.NavButton2.Hide()
         Me.NavButton3.Hide()
         Me.NavButton4.Hide()
-        Me.Label6.Text = "Riktig! Du kan nå forsette videre."
+        Me.displayTextLabel.Text = "Riktig! Du kan nå forsette videre."
     End Sub
 End Class

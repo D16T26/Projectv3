@@ -24,9 +24,10 @@ Public Class F4RA
     ''' the answers to the buttons
     ''' </summary>
     Private Sub Initialize()
-        Me.Label6.Text = "Du er nå i fjerde etasje men her møter du også på en " & Environment.NewLine &
-                         "dørvakt i veien, han krever du svarer på et spørsmål " & Environment.NewLine &
-                         "å komme forbi."
+        Me.displayTextLabel.Text =
+            "Du er nå i fjerde etasje men her møter du også på en " & Environment.NewLine &
+            "dørvakt i veien, han krever du svarer på et spørsmål " & Environment.NewLine &
+            "å komme forbi."
 
         Me.NavButton1.Text = "Foran deg"
         Me.NavButton2.Text = "Til høyre"
@@ -52,7 +53,9 @@ Public Class F4RA
     ''' </summary>
     Private Sub StartRiddle()
         Me.DialogueButton.Hide()
-        Me.Label6.Text = """Hvis du ser rett på en regnbue, hvor er sola da?" & Environment.NewLine
+        Me.displayTextLabel.Text =
+            """Hvis du ser rett på en regnbue, hvor er sola da?" &
+            Environment.NewLine
 
         Me.NavButton1.Show()
         Me.NavButton2.Show()
@@ -88,6 +91,6 @@ Public Class F4RA
         Me.NavButton2.Hide()
         Me.NavButton3.Hide()
         Me.NavButton4.Hide()
-        Me.Label6.Text = "Er vel bare å fortsette videre..."
+        Me.displayTextLabel.Text = "Er vel bare å fortsette videre..."
     End Sub
 End Class

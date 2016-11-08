@@ -50,7 +50,7 @@ Public Class F5RA
     ''' the answers to the buttons
     ''' </summary>
     Private Sub Initialize()
-        Me.Label6.Text = preRiddleDialogue(0)
+        Me.displayTextLabel.Text = preRiddleDialogue(0)
 
         Me.NavButton1.Text = "Istanbul"
         Me.NavButton2.Text = "Alanya"
@@ -80,7 +80,7 @@ Public Class F5RA
     Private Sub PreRiddleDialogueHandler()
         Static prrdCounter As Integer = 1 'PReRiddleDialogueCounter
         If prrdCounter <= preRiddleDialogue.Length - 1 Then
-            Label6.Text = preRiddleDialogue(prrdCounter)
+            displayTextLabel.Text = preRiddleDialogue(prrdCounter)
             prrdCounter += 1
         Else
             Me.StartRiddle()
@@ -96,7 +96,7 @@ Public Class F5RA
     Private Sub PostRiddleDialogueHandler()
         Static pordCounter As Integer = 1 'POstRiddleDialogueCounter
         If pordCounter <= postRiddleDialogue.Length - 1 Then
-            Label6.Text = postRiddleDialogue(pordCounter)
+            displayTextLabel.Text = postRiddleDialogue(pordCounter)
             pordCounter += 1
             If pordCounter = 3 Then
                 DialogueButton.Hide()
@@ -111,7 +111,7 @@ Public Class F5RA
     ''' </summary>
     Private Sub StartRiddle()
         Me.DialogueButton.Hide()
-        Me.Label6.Text &=
+        Me.displayTextLabel.Text &=
             Environment.NewLine &
             Environment.NewLine &
             """Hva heter hovedstaden i Tyrkia?"""
@@ -146,7 +146,7 @@ Public Class F5RA
         Me.NavButton3.Hide()
         Me.NavButton4.Hide()
 
-        Me.Label6.Text = postRiddleDialogue(0)
+        Me.displayTextLabel.Text = postRiddleDialogue(0)
         Me.DialogueButton.Show()
         Me.DialogueButton.Focus()
     End Sub

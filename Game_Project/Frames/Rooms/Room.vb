@@ -55,17 +55,20 @@ Public Class Room
         e.Graphics.DrawImage(My.Resources.mal, r)
     End Sub
 
+    ''' <summary>
+    ''' Sets the dialogue button as focus when a new room is entered
+    ''' </summary>
     Private Sub Room_Load(sender As Object, e As EventArgs) Handles Me.Load
         DialogueButton.Focus()
     End Sub
 
     Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
         Select Case e.KeyCode
-            Case Keys.I
+            Case Keys.E
                 If riddleWon Then
                     Owner.ChangeRoom(Me, Direction.Up)
                 End If
-            Case Keys.J
+            Case Keys.Q
         End Select
     End Sub
 End Class

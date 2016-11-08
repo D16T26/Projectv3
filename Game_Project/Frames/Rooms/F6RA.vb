@@ -5,13 +5,13 @@
 
     Public Sub New(Owner As Form1)
         MyBase.New(Owner)
-        Label6.Text = "Some text"
+        displayTextLabel.Text = "Some text"
         InitializeComponent()
     End Sub
 
     Private Sub startFight()
         DialogueButton.Hide()
-        Label6.Text = ""
+        displayTextLabel.Text = ""
 
         Timer1.Enabled = True
         Timer2.Enabled = False

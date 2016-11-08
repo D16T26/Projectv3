@@ -27,7 +27,7 @@ Public Class F2RA
     ''' the first part of the dialogue.
     ''' </summary>
     Private Sub initialize()
-        Label6.Text =
+        displayTextLabel.Text =
             "Du stopper i toppen av trappen til andre etasje og ser" & Environment.NewLine &
             "ditt værste mareritt, tre rabide hunder. Dette må være" & Environment.NewLine &
             "Frumps berømte chihuahua trio og du er dødelig redd for" & Environment.NewLine &
@@ -43,7 +43,7 @@ Public Class F2RA
         Static c As Boolean = False
         If Not c Then
             c = True
-            Label6.Text =
+            displayTextLabel.Text =
                 "Til høyre for deg ser du tre remser bacon" & Environment.NewLine &
                 "låst bak ett glassvindu. Finn kombinasjonen," & Environment.NewLine &
                 "få tak i baconet og distraher hundene lenge" & Environment.NewLine &
@@ -62,7 +62,7 @@ Public Class F2RA
     Private Sub StartRiddle()
         DialogueButton.Hide()
         HexKeyPanel.Show()
-        Label6.Text =
+        displayTextLabel.Text =
             "Du ser det står gravert inn noen tall under" & Environment.NewLine &
             "glassvinduet, kan dette ha noe med koden for" & Environment.NewLine &
             "å åpne vinduet?" & Environment.NewLine & Environment.NewLine &
@@ -80,7 +80,7 @@ Public Class F2RA
         If TextBox1.Text = "D54E" Then
             riddleWon = True
             HexKeyPanel.Hide()
-            Label6.Text =
+            displayTextLabel.Text =
                 "Riktig kode!" & Environment.NewLine &
                 "Du fikk tak i baconet, distrahert hundene" & Environment.NewLine &
                 "og du kan nå gå videre til neste etasje.."
