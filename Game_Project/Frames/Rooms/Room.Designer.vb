@@ -49,9 +49,6 @@ Partial Class Room
         Me.B9 = New System.Windows.Forms.Button()
         Me.BA = New System.Windows.Forms.Button()
         Me.KeyDownAssist = New System.Windows.Forms.Button()
-        Me.pic1 = New System.Windows.Forms.PictureBox()
-        Me.pic2 = New System.Windows.Forms.PictureBox()
-        Me.pic3 = New System.Windows.Forms.PictureBox()
         Me.picFly = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
@@ -66,18 +63,17 @@ Partial Class Room
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.pic2 = New System.Windows.Forms.PictureBox()
         Me.NavButton2 = New Game_Project.NavButton()
         Me.NavButton4 = New Game_Project.NavButton()
         Me.NavButton3 = New Game_Project.NavButton()
         Me.NavButton1 = New Game_Project.NavButton()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.HexKeyPanel.SuspendLayout()
-        CType(Me.pic1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFly, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -369,43 +365,6 @@ Partial Class Room
         Me.KeyDownAssist.Text = "KeyDownAssist"
         Me.KeyDownAssist.UseVisualStyleBackColor = True
         '
-        'pic1
-        '
-        Me.pic1.BackColor = System.Drawing.Color.Transparent
-        Me.pic1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.pic1.Image = Global.Game_Project.My.Resources.Resources.pic1
-        Me.pic1.Location = New System.Drawing.Point(187, 17)
-        Me.pic1.Name = "pic1"
-        Me.pic1.Size = New System.Drawing.Size(75, 75)
-        Me.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic1.TabIndex = 8
-        Me.pic1.TabStop = False
-        Me.pic1.Visible = False
-        '
-        'pic2
-        '
-        Me.pic2.BackColor = System.Drawing.Color.Transparent
-        Me.pic2.Image = Global.Game_Project.My.Resources.Resources.pic2
-        Me.pic2.Location = New System.Drawing.Point(187, 120)
-        Me.pic2.Name = "pic2"
-        Me.pic2.Size = New System.Drawing.Size(75, 75)
-        Me.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic2.TabIndex = 9
-        Me.pic2.TabStop = False
-        Me.pic2.Visible = False
-        '
-        'pic3
-        '
-        Me.pic3.BackColor = System.Drawing.Color.Transparent
-        Me.pic3.Image = Global.Game_Project.My.Resources.Resources.pic3
-        Me.pic3.Location = New System.Drawing.Point(542, 14)
-        Me.pic3.Name = "pic3"
-        Me.pic3.Size = New System.Drawing.Size(75, 75)
-        Me.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic3.TabIndex = 10
-        Me.pic3.TabStop = False
-        Me.pic3.Visible = False
-        '
         'picFly
         '
         Me.picFly.BackColor = System.Drawing.Color.Transparent
@@ -416,6 +375,22 @@ Partial Class Room
         Me.picFly.TabIndex = 11
         Me.picFly.TabStop = False
         Me.picFly.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 700
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 50
+        '
+        'Timer3
+        '
+        Me.Timer3.Interval = 3000
+        '
+        'Timer4
+        '
+        Me.Timer4.Interval = 50
         '
         'Label3
         '
@@ -510,6 +485,37 @@ Partial Class Room
         Me.Label12.Text = "Click on his face"
         Me.Label12.Visible = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(5, 56)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 20)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Dialogue:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(32, 76)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(159, 20)
+        Me.Label13.TabIndex = 22
+        Me.Label13.Text = "Space - Proceed"
+        '
+        'pic2
+        '
+        Me.pic2.BackColor = System.Drawing.Color.Transparent
+        Me.pic2.Image = Global.Game_Project.My.Resources.Resources.pic2
+        Me.pic2.Location = New System.Drawing.Point(187, 120)
+        Me.pic2.Name = "pic2"
+        Me.pic2.Size = New System.Drawing.Size(75, 75)
+        Me.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic2.TabIndex = 9
+        Me.pic2.TabStop = False
+        Me.pic2.Visible = False
+        '
         'NavButton2
         '
         Me.NavButton2.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -592,25 +598,6 @@ Partial Class Room
         Me.NavButton1.Visible = False
         Me.NavButton1.WestNav = Me.NavButton1
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 56)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 20)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Dialogue:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(32, 76)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(159, 20)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "Space - Proceed"
-        '
         'Room
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -628,9 +615,7 @@ Partial Class Room
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.picFly)
-        Me.Controls.Add(Me.pic3)
         Me.Controls.Add(Me.pic2)
-        Me.Controls.Add(Me.pic1)
         Me.Controls.Add(Me.KeyDownAssist)
         Me.Controls.Add(Me.HexKeyPanel)
         Me.Controls.Add(Me.Panel1)
@@ -644,10 +629,8 @@ Partial Class Room
         Me.Panel1.PerformLayout()
         Me.HexKeyPanel.ResumeLayout(False)
         Me.HexKeyPanel.PerformLayout()
-        CType(Me.pic1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFly, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -683,9 +666,6 @@ Partial Class Room
     Friend WithEvents BReset As Button
     Friend WithEvents KeyDownAssist As Button
     Friend WithEvents BSubmit As Button
-    Friend WithEvents pic1 As PictureBox
-    Friend WithEvents pic2 As PictureBox
-    Friend WithEvents pic3 As PictureBox
     Friend WithEvents picFly As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
@@ -702,4 +682,5 @@ Partial Class Room
     Friend WithEvents Label12 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents pic2 As PictureBox
 End Class

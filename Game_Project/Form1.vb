@@ -20,7 +20,7 @@ Public Class Form1
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
+        Me.ContentPanel.Controls.Add(New F6RA(Me))
     End Sub
 
     ''' <summary>
@@ -50,6 +50,10 @@ Public Class Form1
             .Clear()
             .Add(projectConstants.getFloorAbove(oldRoom))
         End With
+    End Sub
+
+    Public Sub ToCredits()
+
     End Sub
 
     ''' <summary>
