@@ -21,7 +21,7 @@ Public Class Form1
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
+        Me.ContentPanel.Controls.Add(projectConstants.fnMainMenu)
     End Sub
 
     ''' <summary>
@@ -63,7 +63,7 @@ Public Class Form1
     ''' </summary>
     Public Sub ToCredits()
         Me.ContentPanel.Controls.Clear()
-        Me.ContentPanel.Controls.Add(New Credits(Me))
+        Me.ContentPanel.Controls.Add(projectConstants.fnCredits)
     End Sub
 
     ''' <summary>
@@ -75,7 +75,7 @@ Public Class Form1
     Public Sub Restart()
         Me.ContentPanel.Controls.Clear()
         Me.projectConstants.reset()
-        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
+        Me.ContentPanel.Controls.Add(projectConstants.fnMainMenu)
         Me.playerHealth = 460
     End Sub
 

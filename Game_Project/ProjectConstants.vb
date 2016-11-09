@@ -4,7 +4,6 @@
     Public Const ContentWidth As Integer = 640
     Public Const ContentHeight As Integer = 480
 
-    Public ReadOnly mainMenu As MainMenu
     Private introFrame As IntroFrame
     Private Floor1RoomA As Room
     Private Floor2RoomA As Room
@@ -15,7 +14,6 @@
 
     Public Sub New(Owner As Form1)
         Me.Owner = Owner
-        Me.mainMenu = New MainMenu(Me.Owner)
         Me.initialize()
     End Sub
 
@@ -49,6 +47,14 @@
                 ' Room.vb should never be instantiated. and this is the last room
                 Return Me.Floor6RoomA
         End Select
+    End Function
+
+    Public Function fnMainMenu()
+        Return New MainMenu(Me.Owner)
+    End Function
+
+    Public Function fnCredits()
+        Return New Credits(Me.Owner)
     End Function
 
     Public Function fnIntroFrame()
