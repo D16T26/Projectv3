@@ -16,20 +16,20 @@ Public Class Form1
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(projectConstants.Floor6RoomA)
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
     End Sub
 
     Friend Sub GoToIntro()
         With Me.ContentPanel.Controls
             .Clear()
-            .Add(projectConstants.introFrame)
+            .Add(projectConstants.fnIntroFrame)
         End With
     End Sub
 
     Friend Sub StartGame()
         With Me.ContentPanel.Controls
             .Clear()
-            .Add(projectConstants.Floor1RoomA)
+            .Add(projectConstants.fnFloor1RoomA)
         End With
     End Sub
 
@@ -39,15 +39,15 @@ Public Class Form1
         If direction = Direction.Up Then
             Select Case oldRoom.GetType
                 Case GetType(F1RA)
-                    newRoom = projectConstants.Floor2RoomA
+                    newRoom = projectConstants.fnFloor2RoomA
                 Case GetType(F2RA)
-                    newRoom = projectConstants.Floor3RoomA
+                    newRoom = projectConstants.fnFloor3RoomA
                 Case GetType(F3RA)
-                    newRoom = projectConstants.Floor4RoomA
+                    newRoom = projectConstants.fnFloor4RoomA
                 Case GetType(F4RA)
-                    newRoom = projectConstants.Floor5RoomA
+                    newRoom = projectConstants.fnFloor5RoomA
                 Case GetType(F5RA)
-                    newRoom = projectConstants.Floor6RoomA
+                    newRoom = projectConstants.fnFloor6RoomA
             End Select
         End If
 
@@ -78,9 +78,5 @@ Public Class Form1
     Friend Sub CleanExit()
         Application.Exit()
         End
-    End Sub
-
-    Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Me.projectConstants.Dispose()
     End Sub
 End Class
