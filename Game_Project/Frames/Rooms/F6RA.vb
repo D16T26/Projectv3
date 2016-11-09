@@ -29,6 +29,9 @@
         Timer3.Interval = 3000
         Timer4.Interval = 50
 
+        Label11.Show()
+        Label12.Show()
+
         picFly.Visible = True
         picFly.Image = pic1.Image
     End Sub
