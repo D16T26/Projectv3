@@ -78,6 +78,17 @@ Public Class Room
     ''' <summary>
     ''' Reduces the players health.
     ''' and initiates a gameover if the health reaches 0
+    ''' 
+    ''' other than that, it also adds a little string onto the
+    ''' displaytext label, just as a visual cue that you got it wrong
+    ''' it only happens once though, hence the boolean.
+    ''' 
+    ''' it also shows the healthbar if it is the first time the player
+    ''' has taken damage.
+    ''' 
+    ''' it disables timer1 because if it does not, it will keep going if you die
+    ''' on floor6, thus keep calling the game over messagebox until floor6 ia disposed.
+    ''' Honestly, I am not entirely sure it ever would get disposes, since the timer would still be active.
     ''' </summary>
     Protected Sub decrementHealthbar()
         Static hasFailedBefore As Boolean = False
@@ -97,14 +108,24 @@ Public Class Room
         End If
     End Sub
 
+    ''' <summary>
+    ''' Changes the color of the healthbar depending on how much health is left.
+    ''' it goes orage (gold) at 70% and red at 20%
+    ''' </summary>
     Private Sub setHealthBarColor()
         If Me.healthbar.Width <= (0.2 * 460) Then
             Me.healthbar.BackColor = Color.Red
-        ElseIf Me.healthbar.Enabled <= (0.8 * 460) Then
+        ElseIf Me.healthbar.width <= (0.7 * 460) Then
             Me.healthbar.BackColor = Color.Gold
         End If
     End Sub
 
+    ''' <summary>
+    ''' is supposedto be called when a new room is opened, it simply sets
+    ''' the healthbar locally to reflect the health stored in Form1.
+    ''' it checks if playerhealth is less than 460 because the healthbar
+    ''' is supposed to be invisible until you take damage the first time.
+    ''' </summary>
     Friend Sub InitiateHealthBar()
         If Owner.playerHealth < 460 Then
             healthbar.Width = Owner.playerHealth
