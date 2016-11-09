@@ -130,7 +130,6 @@
     <Compile Include="Frames\Rooms\F6RA.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Frames\Rooms\Direction.vb" />
     <Compile Include="Frames\Rooms\Room.Designer.vb">
       <DependentUpon>Room.vb</DependentUpon>
     </Compile>

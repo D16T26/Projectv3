@@ -25,7 +25,6 @@ Partial Class Room
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DialogueButton = New System.Windows.Forms.Button()
         Me.displayTextLabel = New System.Windows.Forms.Label()
@@ -71,6 +70,8 @@ Partial Class Room
         Me.NavButton4 = New Game_Project.NavButton()
         Me.NavButton3 = New Game_Project.NavButton()
         Me.NavButton1 = New Game_Project.NavButton()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.HexKeyPanel.SuspendLayout()
         CType(Me.pic1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,17 +101,6 @@ Partial Class Room
         Me.Label2.Size = New System.Drawing.Size(119, 20)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "E - Move up"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(32, 46)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(139, 20)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Q - Move down"
         '
         'Panel1
         '
@@ -430,72 +420,79 @@ Partial Class Room
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 76)
+        Me.Label3.Location = New System.Drawing.Point(5, 106)
         Me.Label3.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(169, 20)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Multiple Choice:"
+        Me.Label3.Visible = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(32, 96)
+        Me.Label5.Location = New System.Drawing.Point(32, 126)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(139, 20)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "WASD - Select"
+        Me.Label5.Visible = False
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(5, 126)
+        Me.Label6.Location = New System.Drawing.Point(5, 156)
         Me.Label6.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(109, 20)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Key Panel:"
+        Me.Label6.Visible = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(32, 146)
+        Me.Label7.Location = New System.Drawing.Point(32, 176)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(149, 20)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Mouse - Select"
+        Me.Label7.Visible = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(32, 166)
+        Me.Label8.Location = New System.Drawing.Point(32, 196)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(149, 20)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = """0""-""F"" - Type"
+        Me.Label8.Visible = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(32, 186)
+        Me.Label9.Location = New System.Drawing.Point(32, 216)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(119, 20)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = """R"" - Reset"
+        Me.Label9.Visible = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(32, 206)
+        Me.Label10.Location = New System.Drawing.Point(32, 236)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(129, 20)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = """S"" - Submit"
+        Me.Label10.Visible = False
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(5, 236)
+        Me.Label11.Location = New System.Drawing.Point(5, 266)
         Me.Label11.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(159, 20)
@@ -506,7 +503,7 @@ Partial Class Room
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(32, 256)
+        Me.Label12.Location = New System.Drawing.Point(32, 286)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(179, 20)
         Me.Label12.TabIndex = 20
@@ -595,13 +592,34 @@ Partial Class Room
         Me.NavButton1.Visible = False
         Me.NavButton1.WestNav = Me.NavButton1
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(5, 56)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 20)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Dialogue:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(32, 76)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(159, 20)
+        Me.Label13.TabIndex = 22
+        Me.Label13.Text = "Space - Proceed"
+        '
         'Room
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -616,7 +634,6 @@ Partial Class Room
         Me.Controls.Add(Me.KeyDownAssist)
         Me.Controls.Add(Me.HexKeyPanel)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -638,7 +655,6 @@ Partial Class Room
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents displayTextLabel As Label
     Friend WithEvents NavButton2 As NavButton
@@ -684,4 +700,6 @@ Partial Class Room
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label13 As Label
 End Class

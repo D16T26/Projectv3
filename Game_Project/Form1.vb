@@ -45,15 +45,10 @@ Public Class Form1
         End With
     End Sub
 
-    Friend Sub ChangeRoom(oldRoom As Room, direction As Direction)
-        Dim newRoom As Room = Nothing
-        If direction = Direction.Up Then
-            newRoom = projectConstants.getFloorAbove(oldRoom)
-        End If
-
+    Friend Sub ChangeRoom(oldRoom As Room)
         With Me.ContentPanel.Controls
             .Clear()
-            .Add(newRoom)
+            .Add(projectConstants.getFloorAbove(oldRoom))
         End With
     End Sub
 

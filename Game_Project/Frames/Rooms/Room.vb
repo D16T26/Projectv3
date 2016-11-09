@@ -62,11 +62,14 @@ Public Class Room
         DialogueButton.Focus()
     End Sub
 
+    ''' <summary>
+    ''' Allows the player to move up
+    ''' </summary>
     Private Sub Movement(sender As Button, e As KeyEventArgs) Handles KeyDownAssist.KeyDown
         Select Case e.KeyCode
             Case Keys.E
                 If riddleWon Then
-                    Owner.ChangeRoom(Me, Direction.Up)
+                    Owner.ChangeRoom(Me)
                 End If
         End Select
     End Sub

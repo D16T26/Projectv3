@@ -70,6 +70,8 @@ Public Class F1RA
         Me.NavButton3.Show()
         Me.NavButton4.Show()
         Me.NavButton1.Focus()
+        Me.Label3.Show()
+        Me.Label5.Show()
     End Sub
 
     ''' <summary>
@@ -100,6 +102,9 @@ Public Class F1RA
         Me.NavButton2.Hide()
         Me.NavButton3.Hide()
         Me.NavButton4.Hide()
+
+        Me.Label3.Hide()
+        Me.Label5.Hide()
         Me.displayTextLabel.Text = "Er vel bare å fortsette videre..."
     End Sub
 End Class

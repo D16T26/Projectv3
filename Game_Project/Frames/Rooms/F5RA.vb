@@ -121,6 +121,9 @@ Public Class F5RA
         Me.NavButton3.Show()
         Me.NavButton4.Show()
         Me.NavButton1.Focus()
+
+        Me.Label3.Show()
+        Me.Label5.Show()
     End Sub
 
     Private Sub WrongAnswer_Click(sender As NavButton, e As EventArgs) Handles _
@@ -146,6 +149,8 @@ Public Class F5RA
         Me.NavButton3.Hide()
         Me.NavButton4.Hide()
 
+        Me.Label3.Hide()
+        Me.Label5.Hide()
         Me.displayTextLabel.Text = postRiddleDialogue(0)
         Me.DialogueButton.Show()
         Me.DialogueButton.Focus()
