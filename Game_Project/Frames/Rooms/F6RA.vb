@@ -72,13 +72,21 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If Not synlig Then
             Me.decrementHealthbar()
-            picFly.Left = 180 + Rnd() * (ProjectConstants.ContentWidth - 180 - picFly.Width)
-            picFly.Top = 20 + Rnd() * (ProjectConstants.ContentHeight - 20 - picFly.Height)
+            Me.TeleportFrump()
             picFly.Show()
         Else
             picFly.Hide()
         End If
         synlig = Not synlig
+    End Sub
+
+    ''' <summary>
+    ''' Changes the position of the pictuerbox holding the picture
+    ''' of Mr. Frump to a random location within certian bonds.
+    ''' </summary>
+    Private Sub TeleportFrump()
+        picFly.Left = 180 + Rnd() * (ProjectConstants.ContentWidth - 180 - picFly.Width)
+        picFly.Top = 20 + Rnd() * (ProjectConstants.ContentHeight - 20 - picFly.Height)
     End Sub
 
     ''' <summary>
@@ -101,8 +109,8 @@
     ''' </summary>
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         pic2.Visible = False
+        TeleportFrump()
         picFly.Visible = True
-        picFly.Image = My.Resources.pic1
         Timer2.Enabled = False
         Timer1.Enabled = True
         Timer3.Enabled = False
