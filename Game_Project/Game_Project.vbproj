@@ -82,6 +82,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frames\Credits.Designer.vb">
+      <DependentUpon>Credits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Credits.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Frames\IntroFrame.Designer.vb">
       <DependentUpon>IntroFrame.vb</DependentUpon>
     </Compile>
@@ -156,6 +162,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\Credits.resx">
+      <DependentUpon>Credits.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\IntroFrame.resx">
       <DependentUpon>IntroFrame.vb</DependentUpon>

@@ -46,6 +46,10 @@ Public Class Form1
         End With
     End Sub
 
+    ''' <summary>
+    ''' Changes the room to the room above.
+    ''' decided to make it simple.
+    ''' </summary>
     Friend Sub ChangeRoom(oldRoom As Room)
         With Me.ContentPanel.Controls
             .Clear()
@@ -53,16 +57,34 @@ Public Class Form1
         End With
     End Sub
 
+    ''' <summary>
+    ''' clears the contentpanel then refills it with the credits.
+    ''' I think you just won the game
+    ''' </summary>
     Public Sub ToCredits()
-
+        Me.ContentPanel.Controls.Clear()
+        Me.ContentPanel.Controls.Add(New Credits(Me))
     End Sub
 
-    Public Sub GameOver()
-        MsgBox("GAME OVER")
+    ''' <summary>
+    ''' empties contentpanel to dereference anything there.
+    ''' resets the gamestate by calling projectconstants.reset.
+    ''' resets playerhealth
+    ''' .oh, makes the mainmenu the active frame again.
+    ''' </summary>
+    Public Sub Restart()
         Me.ContentPanel.Controls.Clear()
         Me.projectConstants.reset()
         Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
         Me.playerHealth = 460
+    End Sub
+
+    ''' <summary>
+    ''' displays a game over message nad restarts the game.
+    ''' </summary>
+    Public Sub GameOver()
+        MsgBox("GAME OVER")
+        Me.Restart()
     End Sub
 
     ''' <summary>
