@@ -66,6 +66,7 @@ Partial Class Room
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.pic2 = New System.Windows.Forms.PictureBox()
+        Me.healthbar = New System.Windows.Forms.Panel()
         Me.NavButton2 = New Game_Project.NavButton()
         Me.NavButton4 = New Game_Project.NavButton()
         Me.NavButton3 = New Game_Project.NavButton()
@@ -516,6 +517,15 @@ Partial Class Room
         Me.pic2.TabStop = False
         Me.pic2.Visible = False
         '
+        'healthbar
+        '
+        Me.healthbar.BackColor = System.Drawing.Color.Lime
+        Me.healthbar.Location = New System.Drawing.Point(180, 0)
+        Me.healthbar.Name = "healthbar"
+        Me.healthbar.Size = New System.Drawing.Size(460, 20)
+        Me.healthbar.TabIndex = 23
+        Me.healthbar.Visible = False
+        '
         'NavButton2
         '
         Me.NavButton2.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -603,6 +613,7 @@ Partial Class Room
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.healthbar)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
@@ -683,4 +694,5 @@ Partial Class Room
     Friend WithEvents Label4 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents pic2 As PictureBox
+    Friend WithEvents healthbar As Panel
 End Class

@@ -71,8 +71,9 @@
     ''' </summary>
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If Not synlig Then
+            Me.decrementHealthbar()
             picFly.Left = 180 + Rnd() * (ProjectConstants.ContentWidth - 180 - picFly.Width)
-            picFly.Top = Rnd() * (ProjectConstants.ContentHeight - picFly.Height)
+            picFly.Top = 20 + Rnd() * (ProjectConstants.ContentHeight - 20 - picFly.Height)
             picFly.Show()
         Else
             picFly.Hide()

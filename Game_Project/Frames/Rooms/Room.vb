@@ -59,7 +59,8 @@ Public Class Room
     ''' Sets the dialogue button as focus when a new room is entered
     ''' </summary>
     Private Sub Room_Load(sender As Object, e As EventArgs) Handles Me.Load
-        DialogueButton.Focus()
+        Me.DialogueButton.Focus()
+        Me.InitiateHealthBar()
     End Sub
 
     ''' <summary>
@@ -72,5 +73,43 @@ Public Class Room
                     Owner.ChangeRoom(Me)
                 End If
         End Select
+    End Sub
+
+    ''' <summary>
+    ''' Reduces the players health.
+    ''' and initiates a gameover if the health reaches 0
+    ''' </summary>
+    Protected Sub decrementHealthbar()
+        Static hasFailedBefore As Boolean = False
+        If Not hasFailedBefore Then
+            Me.displayTextLabel.Text &= Environment.NewLine & "Ouch!"
+            hasFailedBefore = True
+        End If
+
+        healthbar.Show()
+        Owner.playerHealth -= 46
+        Me.healthbar.Width = Owner.playerHealth
+        Me.setHealthBarColor()
+
+        If Me.healthbar.Width <= 0 Then
+            Timer1.Enabled = False
+            Owner.GameOver()
+        End If
+    End Sub
+
+    Private Sub setHealthBarColor()
+        If Me.healthbar.Width <= (0.2 * 460) Then
+            Me.healthbar.BackColor = Color.Red
+        ElseIf Me.healthbar.Enabled <= (0.8 * 460) Then
+            Me.healthbar.BackColor = Color.Gold
+        End If
+    End Sub
+
+    Friend Sub InitiateHealthBar()
+        If Owner.playerHealth < 460 Then
+            healthbar.Width = Owner.playerHealth
+            Me.setHealthBarColor()
+            Me.healthbar.Show()
+        End If
     End Sub
 End Class

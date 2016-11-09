@@ -126,15 +126,13 @@ Public Class F5RA
         Me.Label5.Show()
     End Sub
 
+    ''' <summary>
+    ''' This procedure is called when nay of the navbuttons holding the
+    ''' wrong answer to the riddle is called. Decrements health
+    ''' </summary>
     Private Sub WrongAnswer_Click(sender As NavButton, e As EventArgs) Handles _
             NavButton1.Click, NavButton2.Click, NavButton4.Click
-        Dim text As String =
-            "The epitome of punishments. Forcing a fellow human" & Environment.NewLine &
-            "being to suffer the existence pop-up messages!!"
-
-        Dim title As String = "L2Geography mate"
-        Dim style As MsgBoxStyle = MsgBoxStyle.Critical
-        MsgBox(text, style, title)
+        Me.decrementHealthbar()
     End Sub
 
     ''' <summary>

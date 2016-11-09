@@ -7,6 +7,10 @@
         Me.Owner = Owner
     End Sub
 
+    Private Sub MainMenu_Load(owner As Object, e As EventArgs) Handles MyBase.Load
+        StartButton.Focus()
+    End Sub
+
     Private Sub NavButton1_Click(sender As Object, e As EventArgs) Handles StartButton.Click
         Owner.GoToIntro()
     End Sub

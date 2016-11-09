@@ -76,17 +76,18 @@ Public Class F3RA
 
     ''' <summary>
     ''' This procedure is called when nay of the navbuttons holding the
-    ''' wrong answer to the riddle is called. as of now it simply throws
-    ''' up a popup message. though, to be fair, I dont think you could get
-    ''' a more sinister punishment than a popup message
+    ''' wrong answer to the riddle is called. Decrements health
     ''' </summary>
     Private Sub WrongAnswer_Click(sender As NavButton, e As EventArgs) Handles _
             NavButton1.Click, NavButton3.Click, NavButton4.Click
-        Dim text As String = "aiaiai. Den timen der kommer til å sette spor..."
-        Dim title As String = "Straff"
-        Dim style As MsgBoxStyle = MsgBoxStyle.Critical
+        Me.decrementHealthbar()
+        Me.decrementHealthbar()
 
-        MsgBox(text, style, title)
+        Static hasFailedBefore As Boolean = False
+        If Not hasFailedBefore Then
+            Me.displayTextLabel.Text &= "   IKKJE IGJEN!"
+            hasFailedBefore = True
+        End If
     End Sub
 
     ''' <summary>

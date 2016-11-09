@@ -97,10 +97,7 @@ Public Class F2RA
             Me.Label9.Hide()
             Me.Label10.Hide()
         Else
-            Dim text As String = "Feil kode, prøv igjen!"
-            Dim title As String = "Feil!"
-            Dim style As MsgBoxStyle = MsgBoxStyle.Critical
-            MsgBox(text, style, title)
+            Me.decrementHealthbar()
         End If
     End Sub
 End Class

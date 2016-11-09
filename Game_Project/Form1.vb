@@ -16,11 +16,12 @@ Public Class Form1
     ''' Name of the player as entered, by the player, during the intro.
     ''' </summary>
     Friend Property playerName As String = ""
+    Friend Property playerHealth As Integer = 460
 
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(New F6RA(Me))
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
     End Sub
 
     ''' <summary>
@@ -54,6 +55,14 @@ Public Class Form1
 
     Public Sub ToCredits()
 
+    End Sub
+
+    Public Sub GameOver()
+        MsgBox("GAME OVER")
+        Me.ContentPanel.Controls.Clear()
+        Me.projectConstants.reset()
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
+        Me.playerHealth = 460
     End Sub
 
     ''' <summary>
