@@ -12,6 +12,10 @@ Public Class Form1
     ''' readonlies. If they are not. I forgot to edit this comment.
     ''' </summary>
     Friend ReadOnly Property projectConstants As ProjectConstants
+    ''' <summary>
+    ''' Name of the player as entered, by the player, during the intro.
+    ''' </summary>
+    Friend Property playerName As String = ""
 
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
@@ -19,6 +23,9 @@ Public Class Form1
         Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
     End Sub
 
+    ''' <summary>
+    ''' Makes the intro frame the active frame.
+    ''' </summary>
     Friend Sub GoToIntro()
         With Me.ContentPanel.Controls
             .Clear()
@@ -26,6 +33,11 @@ Public Class Form1
         End With
     End Sub
 
+    ''' <summary>
+    ''' Starts the game by making floor 1 the active frame.
+    ''' while one can argue that the gmae starts during the intro....
+    ''' it does not.
+    ''' </summary>
     Friend Sub StartGame()
         With Me.ContentPanel.Controls
             .Clear()
@@ -35,20 +47,8 @@ Public Class Form1
 
     Friend Sub ChangeRoom(oldRoom As Room, direction As Direction)
         Dim newRoom As Room = Nothing
-
         If direction = Direction.Up Then
-            Select Case oldRoom.GetType
-                Case GetType(F1RA)
-                    newRoom = projectConstants.fnFloor2RoomA
-                Case GetType(F2RA)
-                    newRoom = projectConstants.fnFloor3RoomA
-                Case GetType(F3RA)
-                    newRoom = projectConstants.fnFloor4RoomA
-                Case GetType(F4RA)
-                    newRoom = projectConstants.fnFloor5RoomA
-                Case GetType(F5RA)
-                    newRoom = projectConstants.fnFloor6RoomA
-            End Select
+            newRoom = projectConstants.getFloorAbove(oldRoom)
         End If
 
         With Me.ContentPanel.Controls
@@ -57,24 +57,9 @@ Public Class Form1
         End With
     End Sub
 
-    Private pName As String = ""
-    Private playerNameAssigned As Boolean = False
-    'Name of the player, shocking, I know.
-    'You can "get" the name as many times as you want, but you can only assign it once
-    Friend Property playerName As String
-        Get
-            Return pName
-        End Get
-        Set(value As String)
-            If Not playerNameAssigned Then
-                pName = value
-                playerNameAssigned = True
-            End If
-        End Set
-    End Property
-
-    'Anything related to closing of game is handled here.
-
+    ''' <summary>
+    ''' Cleanly exits the program.
+    ''' </summary>
     Friend Sub CleanExit()
         Application.Exit()
         End

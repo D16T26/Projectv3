@@ -68,7 +68,6 @@ Public Class Room
                 If riddleWon Then
                     Owner.ChangeRoom(Me, Direction.Up)
                 End If
-            Case Keys.Q
         End Select
     End Sub
 End Class

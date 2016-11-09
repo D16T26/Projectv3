@@ -33,31 +33,29 @@
         Me.Floor6RoomA = New F6RA(Me.Owner)
     End Sub
 
+    Public Function getFloorAbove(oldRoom As Room)
+        Select Case oldRoom.GetType
+            Case GetType(F1RA)
+                Return Me.Floor2RoomA
+            Case GetType(F2RA)
+                Return Me.Floor3RoomA
+            Case GetType(F3RA)
+                Return Me.Floor4RoomA
+            Case GetType(F4RA)
+                Return Me.Floor5RoomA
+            Case GetType(F5RA)
+                Return Me.Floor6RoomA
+            Case Else
+                ' Room.vb should never be instantiated. and this is the last room
+                Return Me.Floor6RoomA
+        End Select
+    End Function
+
     Public Function fnIntroFrame()
         Return Me.introFrame
     End Function
 
     Public Function fnFloor1RoomA()
         Return Me.Floor1RoomA
-    End Function
-
-    Public Function fnFloor2RoomA()
-        Return Me.Floor2RoomA
-    End Function
-
-    Public Function fnFloor3RoomA()
-        Return Me.Floor3RoomA
-    End Function
-
-    Public Function fnFloor4RoomA()
-        Return Me.Floor4RoomA
-    End Function
-
-    Public Function fnFloor5RoomA()
-        Return Me.Floor5RoomA
-    End Function
-
-    Public Function fnFloor6RoomA()
-        Return Me.Floor6RoomA
     End Function
 End Class
