@@ -21,7 +21,7 @@ Public Class Form1
     Public Sub New()
         InitializeComponent() 'Without this, everything breaks.
         Me.projectConstants = New ProjectConstants(Me)
-        Me.ContentPanel.Controls.Add(projectConstants.fnMainMenu)
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
     End Sub
 
     ''' <summary>
@@ -29,7 +29,7 @@ Public Class Form1
     ''' </summary>
     Friend Sub GoToIntro()
         Me.clearContentPanel()
-        Me.ContentPanel.Controls.Add(projectConstants.fnIntroFrame)
+        Me.ContentPanel.Controls.Add(projectConstants.introFrame)
     End Sub
 
     ''' <summary>
@@ -51,7 +51,7 @@ Public Class Form1
     ''' </summary>
     Friend Sub StartGame()
         Me.clearContentPanel()
-        Me.ContentPanel.Controls.Add(projectConstants.fnFloor1RoomA)
+        Me.ContentPanel.Controls.Add(projectConstants.floor1RoomA)
     End Sub
 
     ''' <summary>
@@ -69,7 +69,7 @@ Public Class Form1
     ''' </summary>
     Public Sub ToCredits()
         Me.clearContentPanel()
-        Me.ContentPanel.Controls.Add(projectConstants.fnCredits)
+        Me.ContentPanel.Controls.Add(projectConstants.credits)
     End Sub
 
     ''' <summary>
@@ -79,7 +79,7 @@ Public Class Form1
     ''' </summary>
     Public Sub Restart()
         Me.clearContentPanel()
-        Me.ContentPanel.Controls.Add(projectConstants.fnMainMenu)
+        Me.ContentPanel.Controls.Add(projectConstants.mainMenu)
         Me.playerHealth = 460
     End Sub
 

@@ -16,18 +16,19 @@ Public Class ProjectConstants
     Public Const ContentWidth As Integer = 640
     Public Const ContentHeight As Integer = 480
 
-    'Private introFrame As IntroFrame
-    'Private Floor1RoomA As Room
-    'Private Floor2RoomA As Room
-    'Private Floor3RoomA As Room
-    'Private Floor4RoomA As Room
-    'Private Floor5RoomA As Room
-    'Private Floor6RoomA As Room
-
     Public Sub New(Owner As Form1)
         Me.Owner = Owner
     End Sub
 
+    ''' <summary>
+    ''' A function that will select the next floor based on the floor that the
+    ''' player is already on.
+    ''' 
+    ''' one reason to do it like this is that it makes it a lot easiere to
+    ''' change the order, if I so desired.
+    ''' </summary>
+    ''' <param name="oldRoom">the Room the player is already in</param>
+    ''' <returns>A new instance of the next room</returns>
     Public Function getFloorAbove(oldRoom As Room)
         Select Case oldRoom.GetType
             Case GetType(F1RA)
@@ -44,19 +45,33 @@ Public Class ProjectConstants
         End Select
     End Function
 
-    Public Function fnMainMenu()
+    ''' <summary>
+    ''' Returns a new instance of MainMenu
+    ''' </summary>
+    Public Function mainMenu()
         Return New MainMenu(Me.Owner)
     End Function
 
-    Public Function fnCredits()
+    ''' <summary>
+    ''' Returns a new instance of Credits
+    ''' </summary>
+    Public Function credits()
         Return New Credits(Me.Owner)
     End Function
 
-    Public Function fnIntroFrame()
+    ''' <summary>
+    ''' Returns a new instance of IntroFrame
+    ''' </summary>
+    Public Function introFrame()
         Return New IntroFrame(Me.Owner)
     End Function
 
-    Public Function fnFloor1RoomA()
+    ''' <summary>
+    ''' Gets the first floor, since I do not have a zeroth floor
+    ''' to jump from so I can use the getFloorAbove function.
+    ''' </summary>
+    ''' <returns>A new instance of F1RA</returns>
+    Public Function floor1RoomA()
         Return New F1RA(Me.Owner)
     End Function
 End Class
