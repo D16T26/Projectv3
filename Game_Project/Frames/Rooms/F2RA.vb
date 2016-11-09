@@ -67,6 +67,12 @@ Public Class F2RA
             "glassvinduet, kan dette ha noe med koden for" & Environment.NewLine &
             "å åpne vinduet?" & Environment.NewLine & Environment.NewLine &
             "1101 0101 0100 1110"
+
+        Me.Label6.Show()
+        Me.Label7.Show()
+        Me.Label8.Show()
+        Me.Label9.Show()
+        Me.Label10.Show()
     End Sub
 
     ''' <summary>
@@ -84,6 +90,12 @@ Public Class F2RA
                 "Riktig kode!" & Environment.NewLine &
                 "Du fikk tak i baconet, distrahert hundene" & Environment.NewLine &
                 "og du kan nå gå videre til neste etasje.."
+
+            Me.Label6.Hide()
+            Me.Label7.Hide()
+            Me.Label8.Hide()
+            Me.Label9.Hide()
+            Me.Label10.Hide()
         Else
             Dim text As String = "Feil kode, prøv igjen!"
             Dim title As String = "Feil!"
