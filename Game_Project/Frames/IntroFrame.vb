@@ -32,12 +32,23 @@ Public Class IntroFrame
         Me.Owner.StartGame()
     End Sub
 
+    ''' <summary>
+    ''' Handles enterKeydown on the textbox.
+    ''' First of all, it strips all extraneous whitespace form the input.
+    ''' I am not going to mess with tihngs like symbols or otherwise nonsensical
+    ''' input, like various unicode character codes like emojis and the whatnot.
+    ''' otherwise, it assigns the stripped input to owner.playername so it can be
+    ''' use later.
+    ''' it hides the textbox, followed by focusing the startgamebutton, so that it
+    ''' can be clicked without using the mouse.
+    ''' other than that. it also initiates the next part of the "dialogue"
+    ''' </summary>
     Private Sub NameTextBox_Keydown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
         If e.KeyCode = Keys.Enter Then
             Owner.playerName = Regex.Replace(TextBox1.Text, "\s{2,}", " ").Trim 'Strip superfluous whitespace from the user input. never trust users.
             TextBox1.Hide()
             StartGameButton.Show()
-            StartGameButton.Select()
+            StartGameButton.Focus()
             Label1.Text =
                 "Erkefienden min, Ronald Frump, har kidnappet min datter Kelsey" & Environment.NewLine &
                 "og låst henne inn på toppen av Frump Tower. Du må redde henne" & Environment.NewLine &

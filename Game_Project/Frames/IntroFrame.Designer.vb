@@ -39,29 +39,34 @@ Partial Class IntroFrame
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(0, 423)
+        Me.TextBox1.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(0, 405)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(640, 27)
+        Me.TextBox1.Size = New System.Drawing.Size(640, 30)
         Me.TextBox1.TabIndex = 2
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'StartGameButton
         '
         Me.StartGameButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(41, Byte), Integer))
+        Me.StartGameButton.EastNav = Me.StartGameButton
         Me.StartGameButton.FlatAppearance.BorderSize = 0
         Me.StartGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.StartGameButton.Font = New System.Drawing.Font("Courier New", 10.0!)
+        Me.StartGameButton.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StartGameButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.StartGameButton.Location = New System.Drawing.Point(0, 418)
+        Me.StartGameButton.Location = New System.Drawing.Point(0, 400)
         Me.StartGameButton.Margin = New System.Windows.Forms.Padding(4)
         Me.StartGameButton.Name = "StartGameButton"
+        Me.StartGameButton.NorthNav = Me.StartGameButton
         Me.StartGameButton.Size = New System.Drawing.Size(640, 38)
+        Me.StartGameButton.SouthNav = Me.StartGameButton
         Me.StartGameButton.TabIndex = 1
         Me.StartGameButton.Text = " - Press ENTER/SPACE to continue"
         Me.StartGameButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.StartGameButton.UseVisualStyleBackColor = False
         Me.StartGameButton.Visible = False
+        Me.StartGameButton.WestNav = Me.StartGameButton
         '
         'IntroFrame
         '

@@ -28,10 +28,20 @@ Public Class Form1
     ''' Makes the intro frame the active frame.
     ''' </summary>
     Friend Sub GoToIntro()
-        With Me.ContentPanel.Controls
-            .Clear()
-            .Add(projectConstants.fnIntroFrame)
-        End With
+        Me.clearContentPanel()
+        Me.ContentPanel.Controls.Add(projectConstants.fnIntroFrame)
+    End Sub
+
+    ''' <summary>
+    ''' cleans up the contentpanel and also disposes of the
+    ''' what is currently there, hopefully saving some memory
+    ''' then it clears it
+    ''' </summary>
+    Private Sub clearContentPanel()
+        If Not Me.ContentPanel.Controls(0) Is Nothing Then
+            Me.ContentPanel.Controls(0).Dispose()
+            Me.ContentPanel.Controls.Clear()
+        End If
     End Sub
 
     ''' <summary>
@@ -40,10 +50,8 @@ Public Class Form1
     ''' it does not.
     ''' </summary>
     Friend Sub StartGame()
-        With Me.ContentPanel.Controls
-            .Clear()
-            .Add(projectConstants.fnFloor1RoomA)
-        End With
+        Me.clearContentPanel()
+        Me.ContentPanel.Controls.Add(projectConstants.fnFloor1RoomA)
     End Sub
 
     ''' <summary>
@@ -51,10 +59,8 @@ Public Class Form1
     ''' decided to make it simple.
     ''' </summary>
     Friend Sub ChangeRoom(oldRoom As Room)
-        With Me.ContentPanel.Controls
-            .Clear()
-            .Add(projectConstants.getFloorAbove(oldRoom))
-        End With
+        Me.clearContentPanel()
+        Me.ContentPanel.Controls.Add(projectConstants.getFloorAbove(oldRoom))
     End Sub
 
     ''' <summary>
@@ -62,19 +68,17 @@ Public Class Form1
     ''' I think you just won the game
     ''' </summary>
     Public Sub ToCredits()
-        Me.ContentPanel.Controls.Clear()
+        Me.clearContentPanel()
         Me.ContentPanel.Controls.Add(projectConstants.fnCredits)
     End Sub
 
     ''' <summary>
     ''' empties contentpanel to dereference anything there.
-    ''' resets the gamestate by calling projectconstants.reset.
     ''' resets playerhealth
     ''' .oh, makes the mainmenu the active frame again.
     ''' </summary>
     Public Sub Restart()
-        Me.ContentPanel.Controls.Clear()
-        Me.projectConstants.reset()
+        Me.clearContentPanel()
         Me.ContentPanel.Controls.Add(projectConstants.fnMainMenu)
         Me.playerHealth = 460
     End Sub

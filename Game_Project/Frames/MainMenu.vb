@@ -1,4 +1,14 @@
-﻿Public Class MainMenu
+﻿''' <summary>
+''' This is the main menu. it has three buttons. one of which is disabled.
+''' I mainly keep it there because it looks cool.
+''' 
+''' the when you click the start button, the game starts.
+''' when you click the exitbutton, the game exits.
+''' 
+''' all of these procedures are simply called from the Owner property. or, basically,
+''' the parent form.
+''' </summary>
+Public Class MainMenu
     Public ReadOnly Property author As String = "Sondre Grøneng"
     Private ReadOnly Property Owner As Form1
 
